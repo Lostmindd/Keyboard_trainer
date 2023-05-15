@@ -1,15 +1,16 @@
+# -*- coding: utf-8 -*-
+
+################################################################################
+## Form generated from reading UI file 'untitledtKYetN.ui'
+##
+## Created by: Qt User Interface Compiler version 5.15.2
+##
+## WARNING! All changes made in this file will be lost when recompiling UI file!
+################################################################################
+
 from PySide6.QtCore import *
 from PySide6.QtGui import *
 from PySide6.QtWidgets import *
-
-
-
-
-
-
-
-# -*- coding: utf-8 -*-
-
 
 
 class Ui_MainWindow(object):
@@ -21,63 +22,144 @@ class Ui_MainWindow(object):
         MainWindow.setMinimumSize(QSize(1200, 600))
         MainWindow.setMaximumSize(QSize(1200, 618))
         MainWindow.setBaseSize(QSize(10, 10))
+        MainWindow.setAutoFillBackground(False)
         MainWindow.setStyleSheet(u"background-color: rgb(219, 219, 219);")
+        MainWindow.setAnimated(True)
         MainWindow.setDocumentMode(False)
         MainWindow.setTabShape(QTabWidget.Rounded)
+        MainWindow.setDockNestingEnabled(False)
+        MainWindow.setUnifiedTitleAndToolBarOnMac(False)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
-        self.frame = QFrame(self.centralwidget)
-        self.frame.setObjectName(u"frame")
-        self.frame.setGeometry(QRect(0, 0, 1201, 91))
-        self.frame.setStyleSheet(u"background-color: rgb(0, 0, 0);\n"
+        self.menu_frame = QFrame(self.centralwidget)
+        self.menu_frame.setObjectName(u"menu_frame")
+        self.menu_frame.setGeometry(QRect(0, 0, 1201, 91))
+        self.menu_frame.setStyleSheet(u"background-color: rgb(0, 0, 0);\n"
 "color: #FFFFFF;")
-        self.frame.setFrameShape(QFrame.StyledPanel)
-        self.frame.setFrameShadow(QFrame.Raised)
-        self.start_button = QPushButton(self.frame)
+        self.menu_frame.setFrameShape(QFrame.StyledPanel)
+        self.menu_frame.setFrameShadow(QFrame.Raised)
+        self.start_button = QPushButton(self.menu_frame)
         self.start_button.setObjectName(u"start_button")
+        self.start_button.setEnabled(True)
         self.start_button.setGeometry(QRect(20, 20, 161, 51))
-        self.start_button.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
+        self.start_button.setStyleSheet(u"QPushButton { \n"
+"background-color:rgb(255, 255, 255) ;\n"
 "border-radius: 20px; \n"
 "font: 24pt \"MS Shell Dlg 2\";\n"
-"color: #000000;")
-        self.en_button = QPushButton(self.frame)
+"color: #000000;\n"
+"}\n"
+"QPushButton:hover { \n"
+"background-color:rgb(230, 230, 230) ;\n"
+"border-radius: 20px; \n"
+"font: 24pt \"MS Shell Dlg 2\";\n"
+"color: #000000;\n"
+"}\n"
+"QPushButton:pressed { \n"
+"background-color:rgb(200, 200, 200) ;\n"
+"border-radius: 20px; \n"
+"font: 24pt \"MS Shell Dlg 2\";\n"
+"color: #000000;\n"
+"}")
+        self.en_button = QPushButton(self.menu_frame)
         self.en_button.setObjectName(u"en_button")
         self.en_button.setGeometry(QRect(1040, 20, 61, 51))
-        self.en_button.setStyleSheet(u"background-color: rgb(0, 0, 0);\n"
+        self.en_button.setStyleSheet(u"QPushButton { \n"
+"background-color:rgb(0, 0, 0) ;\n"
 "border-radius: 20px; \n"
-"font: 24pt \"MS Shell Dlg 2\";")
-        self.stat_button = QPushButton(self.frame)
+"font: 24pt \"MS Shell Dlg 2\";\n"
+"color: #FFFFF;\n"
+"}\n"
+"QPushButton:hover { \n"
+"background-color:rgb(80, 80, 80) ;\n"
+"border-radius: 20px; \n"
+"font: 24pt \"MS Shell Dlg 2\";\n"
+"color: #FFFFF;\n"
+"}\n"
+"")
+        self.stat_button = QPushButton(self.menu_frame)
         self.stat_button.setObjectName(u"stat_button")
         self.stat_button.setGeometry(QRect(300, 20, 201, 51))
-        self.stat_button.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
+        self.stat_button.setStyleSheet(u"QPushButton { \n"
+"background-color:rgb(255, 255, 255) ;\n"
 "border-radius: 20px; \n"
 "font: 24pt \"MS Shell Dlg 2\";\n"
-"color: #000000;")
-        self.ru_button = QPushButton(self.frame)
+"color: #000000;\n"
+"}\n"
+"QPushButton:hover { \n"
+"background-color:rgb(230, 230, 230) ;\n"
+"border-radius: 20px; \n"
+"font: 24pt \"MS Shell Dlg 2\";\n"
+"color: #000000;\n"
+"}\n"
+"QPushButton:pressed { \n"
+"background-color:rgb(200, 200, 200) ;\n"
+"border-radius: 20px; \n"
+"font: 24pt \"MS Shell Dlg 2\";\n"
+"color: #000000;\n"
+"}")
+        self.ru_button = QPushButton(self.menu_frame)
         self.ru_button.setObjectName(u"ru_button")
         self.ru_button.setGeometry(QRect(1120, 20, 61, 51))
-        self.ru_button.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
+        self.ru_button.setStyleSheet(u"QPushButton { \n"
+"background-color:rgb(255, 255, 255) ;\n"
 "border-radius: 20px; \n"
 "font: 24pt \"MS Shell Dlg 2\";\n"
-"color: #000000;")
-        self.info_button = QPushButton(self.frame)
+"color: #000000;\n"
+"}\n"
+"")
+        self.info_button = QPushButton(self.menu_frame)
         self.info_button.setObjectName(u"info_button")
         self.info_button.setGeometry(QRect(510, 20, 211, 51))
-        self.info_button.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
+        self.info_button.setStyleSheet(u"QPushButton { \n"
+"background-color:rgb(255, 255, 255) ;\n"
 "border-radius: 20px; \n"
 "font: 24pt \"MS Shell Dlg 2\";\n"
-"color: #000000;")
-        self.difficulty_button = QPushButton(self.frame)
+"color: #000000;\n"
+"}\n"
+"QPushButton:hover { \n"
+"background-color:rgb(230, 230, 230) ;\n"
+"border-radius: 20px; \n"
+"font: 24pt \"MS Shell Dlg 2\";\n"
+"color: #000000;\n"
+"}\n"
+"QPushButton:pressed { \n"
+"background-color:rgb(200, 200, 200) ;\n"
+"border-radius: 20px; \n"
+"font: 24pt \"MS Shell Dlg 2\";\n"
+"color: #000000;\n"
+"}")
+        self.difficulty_button = QPushButton(self.menu_frame)
         self.difficulty_button.setObjectName(u"difficulty_button")
         self.difficulty_button.setGeometry(QRect(730, 20, 201, 51))
-        self.difficulty_button.setStyleSheet(u"background-color: rgb(121, 216, 88);\n"
+        self.difficulty_button.setStyleSheet(u"\n"
+"QPushButton { \n"
+"background-color:rgb(121, 216, 88) ;\n"
 "border-radius: 20px; \n"
 "font: 24pt \"MS Shell Dlg 2\";\n"
-"color: #000000;")
-        self.text = QLabel(self.centralwidget)
-        self.text.setObjectName(u"text")
-        self.text.setGeometry(QRect(40, 210, 1121, 381))
-        self.text.setStyleSheet(u"background-color: rgb(219, 219, 219);\n"
+"color: #000000;\n"
+"}\n"
+"QPushButton:hover { \n"
+"background-color:rgb(101, 196, 68);\n"
+"border-radius: 20px; \n"
+"font: 24pt \"MS Shell Dlg 2\";\n"
+"color: #000000;\n"
+"}\n"
+"QPushButton:pressed { \n"
+"background-color:rgb(71, 166, 38) ;\n"
+"border-radius: 20px; \n"
+"font: 24pt \"MS Shell Dlg 2\";\n"
+"color: #000000;\n"
+"}")
+        self.info_frame = QFrame(self.centralwidget)
+        self.info_frame.setObjectName(u"info_frame")
+        self.info_frame.setGeometry(QRect(0, 89, 1201, 531))
+        self.info_frame.setStyleSheet(u"border: 0;")
+        self.info_frame.setFrameShape(QFrame.StyledPanel)
+        self.info_frame.setFrameShadow(QFrame.Raised)
+        self.info_tab = QTextBrowser(self.info_frame)
+        self.info_tab.setObjectName(u"info_tab")
+        self.info_tab.setGeometry(QRect(10, 0, 1191, 531))
+        self.info_tab.setStyleSheet(u"background-color: rgb(219, 219, 219);\n"
 "border: 0;\n"
 "font: 50pt \"MS Shell Dlg 2\";\n"
 "overflow-wrap: break-word; \n"
@@ -85,14 +167,118 @@ class Ui_MainWindow(object):
 "overflow-wrap: break-word;\n"
 "\n"
 "")
-        self.text.setTextFormat(Qt.PlainText)
-        self.text.setScaledContents(False)
-        self.text.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
-        self.text.setWordWrap(True)
-        self.text.setOpenExternalLinks(False)
-        self.text_for_input = QLabel(self.centralwidget)
+        self.stat_frame = QFrame(self.info_frame)
+        self.stat_frame.setObjectName(u"stat_frame")
+        self.stat_frame.setEnabled(True)
+        self.stat_frame.setGeometry(QRect(0, -10, 1211, 541))
+        self.stat_frame.setStyleSheet(u"border: 0;")
+        self.stat_frame.setFrameShape(QFrame.StyledPanel)
+        self.stat_frame.setFrameShadow(QFrame.Raised)
+        self.stat_tab2 = QLabel(self.stat_frame)
+        self.stat_tab2.setObjectName(u"stat_tab2")
+        self.stat_tab2.setGeometry(QRect(10, 80, 1201, 121))
+        self.stat_tab2.setStyleSheet(u"background-color: rgb(219, 219, 219);\n"
+"border: 0;\n"
+"font: 32pt \"MS Shell Dlg 2\";\n"
+"overflow-wrap: break-word; \n"
+"color: #000000;\n"
+"overflow-wrap: break-word;\n"
+"\n"
+"")
+        self.stat_tab2.setTextFormat(Qt.PlainText)
+        self.stat_tab2.setScaledContents(False)
+        self.stat_tab2.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
+        self.stat_tab2.setWordWrap(True)
+        self.stat_tab2.setOpenExternalLinks(False)
+        self.stat_tab1 = QLabel(self.stat_frame)
+        self.stat_tab1.setObjectName(u"stat_tab1")
+        self.stat_tab1.setGeometry(QRect(10, 0, 1201, 91))
+        self.stat_tab1.setStyleSheet(u"background-color: rgb(219, 219, 219);\n"
+"border: 0;\n"
+"font: 40pt \"MS Shell Dlg 2\";\n"
+"overflow-wrap: break-word; \n"
+"color: #000000;\n"
+"overflow-wrap: break-word;\n"
+"\n"
+"")
+        self.stat_tab1.setTextFormat(Qt.PlainText)
+        self.stat_tab1.setScaledContents(False)
+        self.stat_tab1.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
+        self.stat_tab1.setWordWrap(True)
+        self.stat_tab1.setOpenExternalLinks(False)
+        self.stat_tab3 = QLabel(self.stat_frame)
+        self.stat_tab3.setObjectName(u"stat_tab3")
+        self.stat_tab3.setGeometry(QRect(10, 140, 1201, 81))
+        self.stat_tab3.setStyleSheet(u"background-color: rgb(219, 219, 219);\n"
+"border: 0;\n"
+"font: 32pt \"MS Shell Dlg 2\";\n"
+"overflow-wrap: break-word; \n"
+"color: #000000;\n"
+"overflow-wrap: break-word;\n"
+"\n"
+"")
+        self.stat_tab3.setTextFormat(Qt.PlainText)
+        self.stat_tab3.setScaledContents(False)
+        self.stat_tab3.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
+        self.stat_tab3.setWordWrap(True)
+        self.stat_tab3.setOpenExternalLinks(False)
+        self.stat_tab4 = QLabel(self.stat_frame)
+        self.stat_tab4.setObjectName(u"stat_tab4")
+        self.stat_tab4.setGeometry(QRect(10, 200, 1201, 81))
+        self.stat_tab4.setStyleSheet(u"background-color: rgb(219, 219, 219);\n"
+"border: 0;\n"
+"font: 32pt \"MS Shell Dlg 2\";\n"
+"overflow-wrap: break-word; \n"
+"color: #000000;\n"
+"overflow-wrap: break-word;\n"
+"\n"
+"")
+        self.stat_tab4.setTextFormat(Qt.PlainText)
+        self.stat_tab4.setScaledContents(False)
+        self.stat_tab4.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
+        self.stat_tab4.setWordWrap(True)
+        self.stat_tab4.setOpenExternalLinks(False)
+        self.stat_tab5 = QLabel(self.stat_frame)
+        self.stat_tab5.setObjectName(u"stat_tab5")
+        self.stat_tab5.setGeometry(QRect(10, 260, 1211, 81))
+        self.stat_tab5.setStyleSheet(u"background-color: rgb(219, 219, 219);\n"
+"border: 0;\n"
+"font: 32pt \"MS Shell Dlg 2\";\n"
+"overflow-wrap: break-word; \n"
+"color: #000000;\n"
+"overflow-wrap: break-word;\n"
+"\n"
+"")
+        self.stat_tab5.setTextFormat(Qt.PlainText)
+        self.stat_tab5.setScaledContents(False)
+        self.stat_tab5.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
+        self.stat_tab5.setWordWrap(True)
+        self.stat_tab5.setOpenExternalLinks(False)
+        self.stat_tab6 = QLabel(self.stat_frame)
+        self.stat_tab6.setObjectName(u"stat_tab6")
+        self.stat_tab6.setGeometry(QRect(110, 330, 1001, 111))
+        self.stat_tab6.setStyleSheet(u"background-color: rgb(219, 219, 219);\n"
+"border: 0;\n"
+"font: 32pt \"MS Shell Dlg 2\";\n"
+"overflow-wrap: break-word; \n"
+"color: #000000;\n"
+"overflow-wrap: break-word;\n"
+"\n"
+"")
+        self.stat_tab6.setTextFormat(Qt.PlainText)
+        self.stat_tab6.setScaledContents(False)
+        self.stat_tab6.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
+        self.stat_tab6.setWordWrap(True)
+        self.stat_tab6.setOpenExternalLinks(False)
+        self.training_window = QFrame(self.centralwidget)
+        self.training_window.setObjectName(u"training_window")
+        self.training_window.setGeometry(QRect(0, 89, 1201, 531))
+        self.training_window.setStyleSheet(u"border: 0;")
+        self.training_window.setFrameShape(QFrame.StyledPanel)
+        self.training_window.setFrameShadow(QFrame.Raised)
+        self.text_for_input = QLabel(self.training_window)
         self.text_for_input.setObjectName(u"text_for_input")
-        self.text_for_input.setGeometry(QRect(40, 100, 1121, 101))
+        self.text_for_input.setGeometry(QRect(50, 20, 1121, 101))
         self.text_for_input.setStyleSheet(u"background-color: rgb(219, 219, 219);\n"
 "border: 0;\n"
 "font: 50pt \"MS Shell Dlg 2\";\n"
@@ -106,25 +292,25 @@ class Ui_MainWindow(object):
         self.text_for_input.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
         self.text_for_input.setWordWrap(False)
         self.text_for_input.setOpenExternalLinks(False)
-        self.text_for_input_2 = QLabel(self.centralwidget)
-        self.text_for_input_2.setObjectName(u"text_for_input_2")
-        self.text_for_input_2.setGeometry(QRect(40, 100, 1121, 101))
-        self.text_for_input_2.setStyleSheet(u"background-color: rgb(219, 219, 219,0);\n"
+        self.text_for_input_printed = QLabel(self.training_window)
+        self.text_for_input_printed.setObjectName(u"text_for_input_printed")
+        self.text_for_input_printed.setGeometry(QRect(50, 20, 1121, 101))
+        self.text_for_input_printed.setStyleSheet(u"background-color: rgb(219, 219, 219,0);\n"
 "border: 0;\n"
 "font: 50pt \"MS Shell Dlg 2\"; \n"
 "color: #000000;\n"
 "\n"
 "\n"
 "")
-        self.text_for_input_2.setTextFormat(Qt.PlainText)
-        self.text_for_input_2.setScaledContents(False)
-        self.text_for_input_2.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
-        self.text_for_input_2.setWordWrap(False)
-        self.text_for_input_2.setOpenExternalLinks(False)
-        self.textBrowser = QTextBrowser(self.centralwidget)
-        self.textBrowser.setObjectName(u"textBrowser")
-        self.textBrowser.setGeometry(QRect(10, 100, 1181, 491))
-        self.textBrowser.setStyleSheet(u"background-color: rgb(219, 219, 219);\n"
+        self.text_for_input_printed.setTextFormat(Qt.PlainText)
+        self.text_for_input_printed.setScaledContents(False)
+        self.text_for_input_printed.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
+        self.text_for_input_printed.setWordWrap(False)
+        self.text_for_input_printed.setOpenExternalLinks(False)
+        self.text = QLabel(self.training_window)
+        self.text.setObjectName(u"text")
+        self.text.setGeometry(QRect(40, 110, 1121, 391))
+        self.text.setStyleSheet(u"background-color: rgb(219, 219, 219);\n"
 "border: 0;\n"
 "font: 50pt \"MS Shell Dlg 2\";\n"
 "overflow-wrap: break-word; \n"
@@ -132,11 +318,12 @@ class Ui_MainWindow(object):
 "overflow-wrap: break-word;\n"
 "\n"
 "")
+        self.text.setTextFormat(Qt.PlainText)
+        self.text.setScaledContents(False)
+        self.text.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
+        self.text.setWordWrap(True)
+        self.text.setOpenExternalLinks(False)
         MainWindow.setCentralWidget(self.centralwidget)
-        self.statusbar = QStatusBar(MainWindow)
-        self.statusbar.setObjectName(u"statusbar")
-        self.statusbar.setSizeGripEnabled(True)
-        MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
 
@@ -151,10 +338,7 @@ class Ui_MainWindow(object):
         self.ru_button.setText(QCoreApplication.translate("MainWindow", u"RU", None))
         self.info_button.setText(QCoreApplication.translate("MainWindow", u"\u0418\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044f", None))
         self.difficulty_button.setText(QCoreApplication.translate("MainWindow", u"\u0421\u043b\u043e\u0436\u043d\u043e\u0441\u0442\u044c", None))
-        self.text.setText(QCoreApplication.translate("MainWindow", u"\u044b\u043e\u043f \u0434\u043b\u044b\u0432\u043e \u0434\u043b\u043e\u0430\u0434\u043b \u043f\u043e\u043b\u043e \u044b\u0434\u043f\u043b\u0432\u0440\u0434\u043e\u044b \u0443\u043a\u0440\u0434\u043b\u043f\u043e\u044b\u0434\u043b\u0430 \u043f\u043e\u044b\u043b\u0436\u043f \u0440\u0434\u043b\u0443\u043a \u043f\u0442\u0434\u043b\u044b\u043a\u0432\u043e\u043f \u0436\u0432\u0430\u043b\u043e \u043f\u0434\u043b\u043e\u044f\u0430\u0432 \u043b\u043f\u043e\u0432\u043b\u0434\u0447\u0430\u043e \u043e\u043a\u0432 \u0449\u0436\u0434\u0443\u044b\u043e\u043a \u043f\u043b\u044b\u0443\u043a\u043e\u0435 ", None))
-        self.text_for_input.setText(QCoreApplication.translate("MainWindow", u"\u044b\u043e\u043f \u0434\u043b\u044b\u0432\u043e \u0434\u043b\u043e\u0430\u0434\u043b \u043f\u043e\u043b\u043e \u044b\u0434\u043f\u043b\u0432\u0440\u0434\u043e\u044b \u0443\u043a\u0440\u0434\u043b\u043f\u043e\u044b\u0434\u043b\u0430 \u043f\u043e\u044b\u043b\u0436\u043f \u0440\u0434\u043b\u0443\u043a \u043f\u0442\u0434\u043b\u044b\u043a\u0432\u043e\u043f \u0436\u0432\u0430\u043b\u043e \u043f\u0434\u043b\u043e\u044f\u0430\u0432 \u043b\u043f\u043e\u0432\u043b\u0434\u0447\u0430\u043e \u043e\u043a\u0432 \u0449\u0436\u0434\u0443\u044b\u043e\u043a \u043f\u043b\u044b\u0443\u043a\u043e\u0435 ", None))
-        self.text_for_input_2.setText(QCoreApplication.translate("MainWindow", u"\u044b\u043e\u043f \u0434\u043b\u044b\u0432\u043e \u0434\u043b\u043e\u0430\u0434\u043b \u043f\u043e\u043b\u043e \u044b\u0434\u043f\u043b\u0432\u0440\u0434\u043e\u044b \u0443\u043a\u0440\u0434\u043b\u043f\u043e\u044b\u0434\u043b\u0430 \u043f\u043e\u044b\u043b\u0436\u043f \u0440\u0434\u043b\u0443\u043a \u043f\u0442\u0434\u043b\u044b\u043a\u0432\u043e\u043f \u0436\u0432\u0430\u043b\u043e \u043f\u0434\u043b\u043e\u044f\u0430\u0432 \u043b\u043f\u043e\u0432\u043b\u0434\u0447\u0430\u043e \u043e\u043a\u0432 \u0449\u0436\u0434\u0443\u044b\u043e\u043a \u043f\u043b\u044b\u0443\u043a\u043e\u0435 ", None))
-        self.textBrowser.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.info_tab.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:50pt; font-weight:400; font-style:normal;\">\n"
@@ -172,10 +356,15 @@ class Ui_MainWindow(object):
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:28pt;\">3) \u041d\u0430\u0436\u043c\u0438\u0442\u0435 \u043a\u043d\u043e\u043f\u043a\u0443 &quot;\u0441\u0442\u0430\u0440\u0442&quot;, \u0447\u0442\u043e\u0431\u044b \u043d\u0430\u0447\u0430\u0442\u044c \u0442\u0440\u0435\u043d\u0438\u0440\u043e\u0432\u043a\u0443.</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; mar"
                         "gin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:28pt;\">4) \u041d\u0430\u0436\u043c\u0438\u0442\u0435 \u043a\u043d\u043e\u043f\u043a\u0443 &quot;\u0441\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u043a\u0430&quot;, \u0447\u0442\u043e\u0431\u044b \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0435\u0442\u044c \u0441\u0432\u043e\u044e \u0441\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u043a\u0443.</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:28pt;\">5) \u0427\u0442\u043e\u0431\u044b \u0441\u0433\u0435\u043d\u0435\u0440\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u043d\u043e\u0432\u044b\u0439 \u043d\u0430\u0431\u043e\u0440 \u0441\u043b\u043e\u0432 - \u043f\u043e\u0432\u0442\u043e\u0440\u0438\u0442\u0435 \u0448\u0430\u0433\u0438 1-3 \u0434\u0430\u043d\u043d\u043e\u0433\u043e \u0440\u0443\u043a\u043e\u0432\u043e\u0434\u0441\u0442\u0432\u0430.</span></p>\n"
-"<p style=\"-qt-"
-                        "paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:28pt;\"><br /></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:28pt;\"><br /></p>\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:28pt;\"><br /></p></body></html>", None))
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:28pt;\">5) \u0427\u0442\u043e\u0431\u044b \u0441\u0433\u0435\u043d\u0435\u0440\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u043d\u043e\u0432\u044b\u0439 \u043d\u0430\u0431\u043e\u0440 \u0441\u043b\u043e\u0432 - \u043f\u043e\u0432\u0442\u043e\u0440\u0438\u0442\u0435 \u0448\u0430\u0433\u0438 1-3 \u0434\u0430\u043d\u043d\u043e\u0433\u043e \u0440\u0443\u043a\u043e\u0432\u043e\u0434\u0441\u0442\u0432\u0430.</span></p></body></html>", None))
+        self.stat_tab2.setText(QCoreApplication.translate("MainWindow", u"(\u0441\u0438\u043c\u0432\u043e\u043b\u043e\u0432 \u0432 \u0441\u0435\u043a\u0443\u043d\u0434\u0443)", None))
+        self.stat_tab1.setText(QCoreApplication.translate("MainWindow", u"\u0421\u0440\u0435\u0434\u043d\u044f\u044f \u0441\u043a\u043e\u0440\u043e\u0441\u0442\u044c \u043f\u0435\u0447\u0430\u0442\u0438", None))
+        self.stat_tab3.setText(QCoreApplication.translate("MainWindow", u"\u0437\u0430 1 \u0434\u0435\u043d\u044c:", None))
+        self.stat_tab4.setText(QCoreApplication.translate("MainWindow", u"\u0437\u0430 3 \u0434\u043d\u044f:", None))
+        self.stat_tab5.setText(QCoreApplication.translate("MainWindow", u"\u0437\u0430 10 \u0434\u043d\u0435\u0439:", None))
+        self.stat_tab6.setText(QCoreApplication.translate("MainWindow", u"\u0437\u0430 30 \u0434\u043d\u0435\u0439:", None))
+        self.text_for_input.setText(QCoreApplication.translate("MainWindow", u"\u044b\u043e\u043f \u0434\u043b\u044b\u0432\u043e \u0434\u043b\u043e\u0430\u0434\u043b \u043f\u043e\u043b\u043e \u044b\u0434\u043f\u043b\u0432\u0440\u0434\u043e\u044b \u0443\u043a\u0440\u0434\u043b\u043f\u043e\u044b\u0434\u043b\u0430 \u043f\u043e\u044b\u043b\u0436\u043f \u0440\u0434\u043b\u0443\u043a \u043f\u0442\u0434\u043b\u044b\u043a\u0432\u043e\u043f \u0436\u0432\u0430\u043b\u043e \u043f\u0434\u043b\u043e\u044f\u0430\u0432 \u043b\u043f\u043e\u0432\u043b\u0434\u0447\u0430\u043e \u043e\u043a\u0432 \u0449\u0436\u0434\u0443\u044b\u043e\u043a \u043f\u043b\u044b\u0443\u043a\u043e\u0435 ", None))
+        self.text_for_input_printed.setText(QCoreApplication.translate("MainWindow", u"\u044b\u043e\u043f \u0434\u043b\u044b\u0432\u043e \u0434\u043b\u043e\u0430\u0434\u043b \u043f\u043e\u043b\u043e \u044b\u0434\u043f\u043b\u0432\u0440\u0434\u043e\u044b \u0443\u043a\u0440\u0434\u043b\u043f\u043e\u044b\u0434\u043b\u0430 \u043f\u043e\u044b\u043b\u0436\u043f \u0440\u0434\u043b\u0443\u043a \u043f\u0442\u0434\u043b\u044b\u043a\u0432\u043e\u043f \u0436\u0432\u0430\u043b\u043e \u043f\u0434\u043b\u043e\u044f\u0430\u0432 \u043b\u043f\u043e\u0432\u043b\u0434\u0447\u0430\u043e \u043e\u043a\u0432 \u0449\u0436\u0434\u0443\u044b\u043e\u043a \u043f\u043b\u044b\u0443\u043a\u043e\u0435 ", None))
+        self.text.setText(QCoreApplication.translate("MainWindow", u"\u044b\u043e\u043f \u0434\u043b\u044b\u0432\u043e \u0434\u043b\u043e\u0430\u0434\u043b \u043f\u043e\u043b\u043e \u044b\u0434\u043f\u043b\u0432\u0440\u0434\u043e\u044b \u0443\u043a\u0440\u0434\u043b\u043f\u043e\u044b\u0434\u043b\u0430 \u043f\u043e\u044b\u043b\u0436\u043f \u0440\u0434\u043b\u0443\u043a \u043f\u0442\u0434\u043b\u044b\u043a\u0432\u043e\u043f \u0436\u0432\u0430\u043b\u043e \u043f\u0434\u043b\u043e\u044f\u0430\u0432 \u043b\u043f\u043e\u0432\u043b\u0434\u0447\u0430\u043e \u043e\u043a\u0432 \u0449\u0436\u0434\u0443\u044b\u043e\u043a \u043f\u043b\u044b\u0443\u043a\u043e\u0435 ", None))
     # retranslateUi
 
