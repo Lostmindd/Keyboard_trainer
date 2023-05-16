@@ -146,6 +146,8 @@ class Ui_MainWindow(object):
 "overflow-wrap: break-word;\n"
 "\n"
 "")
+        self.info_tab.setUndoRedoEnabled(True)
+        self.info_tab.setTextInteractionFlags(Qt.NoTextInteraction)
         self.stat_frame = QFrame(self.centralwidget)
         self.stat_frame.setObjectName(u"stat_frame")
         self.stat_frame.setEnabled(True)
@@ -261,7 +263,7 @@ class Ui_MainWindow(object):
         self.training_window.setFrameShadow(QFrame.Raised)
         self.text_for_input = QLabel(self.training_window)
         self.text_for_input.setObjectName(u"text_for_input")
-        self.text_for_input.setGeometry(QRect(50, 20, 1121, 101))
+        self.text_for_input.setGeometry(QRect(40, 20, 1121, 101))
         self.text_for_input.setStyleSheet(u"background-color: rgb(219, 219, 219);\n"
 "border: 0;\n"
 "font: 50pt \"MS Shell Dlg 2\";\n"
@@ -277,11 +279,11 @@ class Ui_MainWindow(object):
         self.text_for_input.setOpenExternalLinks(False)
         self.text_for_input_printed = QLabel(self.training_window)
         self.text_for_input_printed.setObjectName(u"text_for_input_printed")
-        self.text_for_input_printed.setGeometry(QRect(50, 20, 1121, 101))
+        self.text_for_input_printed.setGeometry(QRect(40, 20, 1121, 101))
         self.text_for_input_printed.setStyleSheet(u"background-color: rgb(219, 219, 219,0);\n"
 "border: 0;\n"
 "font: 50pt \"MS Shell Dlg 2\"; \n"
-"color: #000000;\n"
+"color: #FFFFFF;\n"
 "\n"
 "\n"
 "")
@@ -298,10 +300,11 @@ class Ui_MainWindow(object):
 "font: 50pt \"MS Shell Dlg 2\";\n"
 "overflow-wrap: break-word; \n"
 "color: #000000;\n"
-"overflow-wrap: break-word;")
+"word-wrap: break-word;")
+
         self.text.setTextFormat(Qt.PlainText)
         self.text.setScaledContents(False)
-        self.text.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
+        self.text.setAlignment(Qt.AlignLeft|Qt.AlignTop)
         self.text.setWordWrap(True)
         self.text.setOpenExternalLinks(False)
         MainWindow.setCentralWidget(self.centralwidget)
@@ -344,8 +347,8 @@ class Ui_MainWindow(object):
         self.stat_tab_day_3.setText(QCoreApplication.translate("MainWindow", u"\u0437\u0430 3 \u0434\u043d\u044f:", None))
         self.stat_tab_day_10.setText(QCoreApplication.translate("MainWindow", u"\u0437\u0430 10 \u0434\u043d\u0435\u0439:", None))
         self.stat_tab_day_30.setText(QCoreApplication.translate("MainWindow", u"\u0437\u0430 30 \u0434\u043d\u0435\u0439:", None))
-        self.text_for_input.setText(QCoreApplication.translate("MainWindow", u"\u044b\u043e\u043f \u0434\u043b\u044b\u0432\u043e \u0434\u043b\u043e\u0430\u0434\u043b \u043f\u043e\u043b\u043e \u044b\u0434\u043f\u043b\u0432\u0440\u0434\u043e\u044b \u0443\u043a\u0440\u0434\u043b\u043f\u043e\u044b\u0434\u043b\u0430 \u043f\u043e\u044b\u043b\u0436\u043f \u0440\u0434\u043b\u0443\u043a \u043f\u0442\u0434\u043b\u044b\u043a\u0432\u043e\u043f \u0436\u0432\u0430\u043b\u043e \u043f\u0434\u043b\u043e\u044f\u0430\u0432 \u043b\u043f\u043e\u0432\u043b\u0434\u0447\u0430\u043e \u043e\u043a\u0432 \u0449\u0436\u0434\u0443\u044b\u043e\u043a \u043f\u043b\u044b\u0443\u043a\u043e\u0435 ", None))
-        self.text_for_input_printed.setText(QCoreApplication.translate("MainWindow", u"\u044b\u043e\u043f \u0434\u043b\u044b\u0432\u043e \u0434\u043b\u043e\u0430\u0434\u043b \u043f\u043e\u043b\u043e \u044b\u0434\u043f\u043b\u0432\u0440\u0434\u043e\u044b \u0443\u043a\u0440\u0434\u043b\u043f\u043e\u044b\u0434\u043b\u0430 \u043f\u043e\u044b\u043b\u0436\u043f \u0440\u0434\u043b\u0443\u043a \u043f\u0442\u0434\u043b\u044b\u043a\u0432\u043e\u043f \u0436\u0432\u0430\u043b\u043e \u043f\u0434\u043b\u043e\u044f\u0430\u0432 \u043b\u043f\u043e\u0432\u043b\u0434\u0447\u0430\u043e \u043e\u043a\u0432 \u0449\u0436\u0434\u0443\u044b\u043e\u043a \u043f\u043b\u044b\u0443\u043a\u043e\u0435 ", None))
-        self.text.setText(QCoreApplication.translate("MainWindow", u"\u044b\u043e\u043f \u0434\u043b\u044b\u0432\u043e \u0434\u043b\u043e\u0430\u0434\u043b \u043f\u043e\u043b\u043e \u044b\u0434\u043f\u043b\u0432\u0440\u0434\u043e\u044b \u0443\u043a\u0440\u0434\u043b\u043f\u043e\u044b\u0434\u043b\u0430 \u043f\u043e\u044b\u043b\u0436\u043f \u0440\u0434\u043b\u0443\u043a \u043f\u0442\u0434\u043b\u044b\u043a\u0432\u043e\u043f \u0436\u0432\u0430\u043b\u043e \u043f\u0434\u043b\u043e\u044f\u0430\u0432 \u043b\u043f\u043e\u0432\u043b\u0434\u0447\u0430\u043e \u043e\u043a\u0432 \u0449\u0436\u0434\u0443\u044b\u043e\u043a \u043f\u043b\u044b\u0443\u043a\u043e\u0435 ", None))
+        # self.text_for_input.setText(QCoreApplication.translate("MainWindow", u"\u044b\u043e\u043f \u0434\u043b\u044b\u0432\u043e \u0434\u043b\u043e\u0430\u0434\u043b \u043f\u043e\u043b\u043e \u044b\u0434\u043f\u043b\u0432\u0440\u0434\u043e\u044b \u0443\u043a\u0440\u0434\u043b\u043f\u043e\u044b\u0434\u043b\u0430 \u043f\u043e\u044b\u043b\u0436\u043f \u0440\u0434\u043b\u0443\u043a \u043f\u0442\u0434\u043b\u044b\u043a\u0432\u043e\u043f \u0436\u0432\u0430\u043b\u043e \u043f\u0434\u043b\u043e\u044f\u0430\u0432 \u043b\u043f\u043e\u0432\u043b\u0434\u0447\u0430\u043e \u043e\u043a\u0432 \u0449\u0436\u0434\u0443\u044b\u043e\u043a \u043f\u043b\u044b\u0443\u043a\u043e\u0435 ", None))
+        # self.text_for_input_printed.setText(QCoreApplication.translate("MainWindow", u"\u044b\u043e\u043f \u0434\u043b\u044b\u0432\u043e \u0434\u043b\u043e\u0430\u0434\u043b \u043f\u043e\u043b\u043e \u044b\u0434\u043f\u043b\u0432\u0440\u0434\u043e\u044b \u0443\u043a\u0440\u0434\u043b\u043f\u043e\u044b\u0434\u043b\u0430 \u043f\u043e\u044b\u043b\u0436\u043f \u0440\u0434\u043b\u0443\u043a \u043f\u0442\u0434\u043b\u044b\u043a\u0432\u043e\u043f \u0436\u0432\u0430\u043b\u043e \u043f\u0434\u043b\u043e\u044f\u0430\u0432 \u043b\u043f\u043e\u0432\u043b\u0434\u0447\u0430\u043e \u043e\u043a\u0432 \u0449\u0436\u0434\u0443\u044b\u043e\u043a \u043f\u043b\u044b\u0443\u043a\u043e\u0435 ", None))
+        # self.text.setText(QCoreApplication.translate("MainWindow", u"\u044b\u043e\u043f \u0434\u043b\u044b\u0432\u043e \u0434\u043b\u043e\u0430\u0434\u043b \u043f\u043e\u043b\u043e \u044b\u0434\u043f\u043b\u0432\u0440\u0434\u043e\u044b \u0443\u043a\u0440\u0434\u043b\u043f\u043e\u044b\u0434\u043b\u0430 \u043f\u043e\u044b\u043b\u0436\u043f \u0440\u0434\u043b\u0443\u043a \u043f\u0442\u0434\u043b\u044b\u043a\u0432\u043e\u043f \u0436\u0432\u0430\u043b\u043e \u043f\u0434\u043b\u043e\u044f\u0430\u0432 \u043b\u043f\u043e\u0432\u043b\u0434\u0447\u0430\u043e \u043e\u043a\u0432 \u0449\u0436\u0434\u0443\u044b\u043e\u043a \u043f\u043b\u044b\u0443\u043a\u043e\u0435 ", None))
     # retranslateUi
 

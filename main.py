@@ -1,6 +1,7 @@
 # from getmac import get_mac_address as gma
 #
 # print(gma())
+import random
 import sys
 
 from PySide6.QtWidgets import QApplication, QMainWindow
@@ -23,8 +24,8 @@ class keyboard_trainer(QMainWindow):
         self.ui.stat_button.clicked.connect(self.show_statistics_page)
         self.ui.info_button.clicked.connect(self.show_information_page)
         self.ui.difficulty_button.clicked.connect(self.change_difficulty)
-        self.ui.ru_button.clicked.connect(lambda x:self.change_language('ru'))
-        self.ui.en_button.clicked.connect(lambda x:self.change_language('en'))
+        self.ui.ru_button.clicked.connect(lambda x: self.change_language('ru'))
+        self.ui.en_button.clicked.connect(lambda x: self.change_language('en'))
 
     def show_training_page(self):
         if self.current_page == 'training_page':
@@ -34,6 +35,7 @@ class keyboard_trainer(QMainWindow):
         self.ui.info_frame.hide()
         self.ui.stat_frame.hide()
         self.ui.training_window.show()
+        self.generate_words()
 
     def show_information_page(self):
         if self.current_page == 'information_page':
@@ -61,9 +63,9 @@ class keyboard_trainer(QMainWindow):
         if self.current_page == 'training_page':
             return
         difficulty = ['низкая', 'средняя', 'высокая']
-        difficulty_colors = {'низкая': [[121, 216, 88], [101, 196, 68] , [71, 166, 38]],
-                             'средняя': [[255, 222, 104], [235, 202, 84] , [205, 172, 54]],
-                             'высокая': [[255, 125, 141], [235, 105, 121] , [205, 75, 91]]}
+        difficulty_colors = {'низкая': [[121, 216, 88], [101, 196, 68], [71, 166, 38]],
+                             'средняя': [[255, 222, 104], [235, 202, 84], [205, 172, 54]],
+                             'высокая': [[255, 125, 141], [235, 105, 121], [205, 75, 91]]}
         new_difficulty_index = ((difficulty.index(self.current_difficulty) + 1) % 3)
         self.current_difficulty = difficulty[new_difficulty_index]
         button_stylesheet_part_1 = u"\nQPushButton { \n"
@@ -72,9 +74,9 @@ class keyboard_trainer(QMainWindow):
                              ", " + str(difficulty_colors[self.current_difficulty][0][1]) + ", " \
                              + str(difficulty_colors[self.current_difficulty][0][2]) + ")"
         button_stylesheet_part_2 = " ;\nborder-radius: 20px; \nfont: 24pt \"MS Shell Dlg 2\";\ncolor: #000000;\n}\nQPushButton:hover { \n"
-        background_color_2 ="background-color:rgb(" + str(difficulty_colors[self.current_difficulty][1][0]) + ", " \
-                            + str(difficulty_colors[self.current_difficulty][1][1]) + ", " \
-                            + str(difficulty_colors[self.current_difficulty][1][2]) + ");"
+        background_color_2 = "background-color:rgb(" + str(difficulty_colors[self.current_difficulty][1][0]) + ", " \
+                             + str(difficulty_colors[self.current_difficulty][1][1]) + ", " \
+                             + str(difficulty_colors[self.current_difficulty][1][2]) + ");"
         button_stylesheet_part_3 = "\nborder-radius: 20px; \nfont: 24pt \"MS Shell Dlg 2\";\ncolor: #000000;\n}\nQPushButton:pressed { \n"
         background_color_3 = "background-color:rgb(" + str(difficulty_colors[self.current_difficulty][2][0]) + ", " \
                              + str(difficulty_colors[self.current_difficulty][2][1]) + ", " \
@@ -88,10 +90,10 @@ class keyboard_trainer(QMainWindow):
             return
         self.current_language = language
         inactive_button_stylesheet = u"QPushButton { \nbackground-color:rgb(0, 0, 0) ;\n" \
-        + "border-radius: 20px; \nfont: 24pt \"MS Shell Dlg 2\";\ncolor: #FFFFF;\n}\nQPushButton:hover { \n" \
-        + "background-color:rgb(80, 80, 80) ;\nborder-radius: 20px; \nfont: 24pt \"MS Shell Dlg 2\";\ncolor: #FFFFF;\n}"
+                                     + "border-radius: 20px; \nfont: 24pt \"MS Shell Dlg 2\";\ncolor: #FFFFF;\n}\nQPushButton:hover { \n" \
+                                     + "background-color:rgb(80, 80, 80) ;\nborder-radius: 20px; \nfont: 24pt \"MS Shell Dlg 2\";\ncolor: #FFFFF;\n}"
         active_button_stylesheet = u"QPushButton { \nbackground-color:rgb(255, 255, 255) ;\n" \
-        + "border-radius: 20px; \nfont: 24pt \"MS Shell Dlg 2\";\ncolor: #000000;\n}"
+                                   + "border-radius: 20px; \nfont: 24pt \"MS Shell Dlg 2\";\ncolor: #000000;\n}"
         if language == 'ru':
             self.ui.ru_button.setStyleSheet(active_button_stylesheet)
             self.ui.en_button.setStyleSheet(inactive_button_stylesheet)
@@ -100,25 +102,40 @@ class keyboard_trainer(QMainWindow):
             self.ui.ru_button.setStyleSheet(inactive_button_stylesheet)
 
     def get_user_stats(self):
+        # TODO: Вытягивание с БД
         user_stats = [4.65, 4.21, 3.56, 2.69]
         return user_stats
 
+    def generate_words(self):
+        print_line_size = 30
+        print_line = ''
+        words = self.get_words_from_db()
+        while print_line_size > len(words[-1] + ' '):
+            print_line_size -= len(words[-1])
+            print_line += words.pop() + ' '
+
+        remaining_text = ' '.join(words)
+        self.ui.text_for_input.setText(print_line)
+        self.ui.text.setText(remaining_text)
+
+    def keyPressEvent(self, event):
+        print(event.text())
+    def get_words_from_db(self):
+        # TODO: Вытягивание с БД
+        return [str(random.randint(9,100000)) for i in range(1000, 3000000, 10000)]
 
 
-#testing
-user_stats = {1:4.65, 3:4.21, 10: 3.56, 30: 2.69}
-rus_words = [i for i in range(1000, 1000000, 10000)]
+# testing
+user_stats = {1: 4.65, 3: 4.21, 10: 3.56, 30: 2.69}
 
 
 app = QApplication(sys.argv)
 app.setStyle("Windows")
 
-
-
 window = keyboard_trainer()
 window.show()
-    # window.ui.info_frame.hide()
-    # window.ui.stat_frame.hide()
-    # window.ui.training_window.show()
+# window.ui.info_frame.hide()
+# window.ui.stat_frame.hide()
+# window.ui.training_window.show()
 
 sys.exit(app.exec())
