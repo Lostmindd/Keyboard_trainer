@@ -1,12 +1,3 @@
-# -*- coding: utf-8 -*-
-
-################################################################################
-## Form generated from reading UI file 'untitledtKYetN.ui'
-##
-## Created by: Qt User Interface Compiler version 5.15.2
-##
-## WARNING! All changes made in this file will be lost when recompiling UI file!
-################################################################################
 
 from PySide6.QtCore import *
 from PySide6.QtGui import *
@@ -131,25 +122,13 @@ class Ui_MainWindow(object):
         self.difficulty_button = QPushButton(self.menu_frame)
         self.difficulty_button.setObjectName(u"difficulty_button")
         self.difficulty_button.setGeometry(QRect(730, 20, 201, 51))
-        self.difficulty_button.setStyleSheet(u"\n"
-"QPushButton { \n"
+        self.difficulty_button.setStyleSheet(u"\nQPushButton { \n"
 "background-color:rgb(121, 216, 88) ;\n"
-"border-radius: 20px; \n"
-"font: 24pt \"MS Shell Dlg 2\";\n"
-"color: #000000;\n"
-"}\n"
-"QPushButton:hover { \n"
+"border-radius: 20px; \nfont: 24pt \"MS Shell Dlg 2\";\ncolor: #000000;\n}\nQPushButton:hover { \n"
 "background-color:rgb(101, 196, 68);\n"
-"border-radius: 20px; \n"
-"font: 24pt \"MS Shell Dlg 2\";\n"
-"color: #000000;\n"
-"}\n"
-"QPushButton:pressed { \n"
+"border-radius: 20px; \nfont: 24pt \"MS Shell Dlg 2\";\ncolor: #000000;\n}\nQPushButton:pressed { \n"
 "background-color:rgb(71, 166, 38) ;\n"
-"border-radius: 20px; \n"
-"font: 24pt \"MS Shell Dlg 2\";\n"
-"color: #000000;\n"
-"}")
+"border-radius: 20px; \nfont: 24pt \"MS Shell Dlg 2\";\ncolor: #000000;\n}")
         self.info_frame = QFrame(self.centralwidget)
         self.info_frame.setObjectName(u"info_frame")
         self.info_frame.setGeometry(QRect(0, 89, 1201, 531))
@@ -167,10 +146,10 @@ class Ui_MainWindow(object):
 "overflow-wrap: break-word;\n"
 "\n"
 "")
-        self.stat_frame = QFrame(self.info_frame)
+        self.stat_frame = QFrame(self.centralwidget)
         self.stat_frame.setObjectName(u"stat_frame")
         self.stat_frame.setEnabled(True)
-        self.stat_frame.setGeometry(QRect(0, -10, 1211, 541))
+        self.stat_frame.setGeometry(QRect(0, 89, 1211, 541))
         self.stat_frame.setStyleSheet(u"border: 0;")
         self.stat_frame.setFrameShape(QFrame.StyledPanel)
         self.stat_frame.setFrameShadow(QFrame.Raised)
@@ -206,70 +185,74 @@ class Ui_MainWindow(object):
         self.stat_tab1.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
         self.stat_tab1.setWordWrap(True)
         self.stat_tab1.setOpenExternalLinks(False)
-        self.stat_tab3 = QLabel(self.stat_frame)
-        self.stat_tab3.setObjectName(u"stat_tab3")
-        self.stat_tab3.setGeometry(QRect(10, 140, 1201, 81))
-        self.stat_tab3.setStyleSheet(u"background-color: rgb(219, 219, 219);\n"
+        self.stat_tab_day_1 = QLabel(self.stat_frame)
+        self.stat_tab_day_1.setObjectName(u"stat_tab_day_1")
+        self.stat_tab_day_1.setGeometry(QRect(10, 140, 1201, 81))
+        self.stat_tab_day_1.setStyleSheet(u"background-color: rgb(219, 219, 219);\n"
 "border: 0;\n"
 "font: 32pt \"MS Shell Dlg 2\";\n"
 "overflow-wrap: break-word; \n"
+"text-decoration: underline; \n"
 "color: #000000;\n"
 "overflow-wrap: break-word;\n"
 "\n"
 "")
-        self.stat_tab3.setTextFormat(Qt.PlainText)
-        self.stat_tab3.setScaledContents(False)
-        self.stat_tab3.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
-        self.stat_tab3.setWordWrap(True)
-        self.stat_tab3.setOpenExternalLinks(False)
-        self.stat_tab4 = QLabel(self.stat_frame)
-        self.stat_tab4.setObjectName(u"stat_tab4")
-        self.stat_tab4.setGeometry(QRect(10, 200, 1201, 81))
-        self.stat_tab4.setStyleSheet(u"background-color: rgb(219, 219, 219);\n"
+        self.stat_tab_day_1.setTextFormat(Qt.PlainText)
+        self.stat_tab_day_1.setScaledContents(False)
+        self.stat_tab_day_1.setAlignment(Qt.AlignHCenter | Qt.AlignTop)
+        self.stat_tab_day_1.setWordWrap(True)
+        self.stat_tab_day_1.setOpenExternalLinks(False)
+        self.stat_tab_day_3 = QLabel(self.stat_frame)
+        self.stat_tab_day_3.setObjectName(u"stat_tab_day_3")
+        self.stat_tab_day_3.setGeometry(QRect(10, 200, 1201, 81))
+        self.stat_tab_day_3.setStyleSheet(u"background-color: rgb(219, 219, 219);\n"
 "border: 0;\n"
 "font: 32pt \"MS Shell Dlg 2\";\n"
 "overflow-wrap: break-word; \n"
+"text-decoration: underline; \n"
 "color: #000000;\n"
 "overflow-wrap: break-word;\n"
 "\n"
 "")
-        self.stat_tab4.setTextFormat(Qt.PlainText)
-        self.stat_tab4.setScaledContents(False)
-        self.stat_tab4.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
-        self.stat_tab4.setWordWrap(True)
-        self.stat_tab4.setOpenExternalLinks(False)
-        self.stat_tab5 = QLabel(self.stat_frame)
-        self.stat_tab5.setObjectName(u"stat_tab5")
-        self.stat_tab5.setGeometry(QRect(10, 260, 1211, 81))
-        self.stat_tab5.setStyleSheet(u"background-color: rgb(219, 219, 219);\n"
+        self.stat_tab_day_3.setTextFormat(Qt.PlainText)
+        self.stat_tab_day_3.setScaledContents(False)
+        self.stat_tab_day_3.setAlignment(Qt.AlignHCenter | Qt.AlignTop)
+        self.stat_tab_day_3.setWordWrap(True)
+        self.stat_tab_day_3.setOpenExternalLinks(False)
+        self.stat_tab_day_10 = QLabel(self.stat_frame)
+        self.stat_tab_day_10.setObjectName(u"stat_tab_day_10")
+        self.stat_tab_day_10.setGeometry(QRect(10, 260, 1211, 81))
+        self.stat_tab_day_10.setStyleSheet(u"background-color: rgb(219, 219, 219);\n"
 "border: 0;\n"
 "font: 32pt \"MS Shell Dlg 2\";\n"
 "overflow-wrap: break-word; \n"
+"text-decoration: underline; \n"                                           
 "color: #000000;\n"
 "overflow-wrap: break-word;\n"
 "\n"
 "")
-        self.stat_tab5.setTextFormat(Qt.PlainText)
-        self.stat_tab5.setScaledContents(False)
-        self.stat_tab5.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
-        self.stat_tab5.setWordWrap(True)
-        self.stat_tab5.setOpenExternalLinks(False)
-        self.stat_tab6 = QLabel(self.stat_frame)
-        self.stat_tab6.setObjectName(u"stat_tab6")
-        self.stat_tab6.setGeometry(QRect(110, 330, 1001, 111))
-        self.stat_tab6.setStyleSheet(u"background-color: rgb(219, 219, 219);\n"
+        self.stat_tab_day_10.setTextFormat(Qt.PlainText)
+        self.stat_tab_day_10.setScaledContents(False)
+        self.stat_tab_day_10.setAlignment(Qt.AlignHCenter | Qt.AlignTop)
+        self.stat_tab_day_10.setWordWrap(True)
+        self.stat_tab_day_10.setOpenExternalLinks(False)
+        self.stat_tab_day_30 = QLabel(self.stat_frame)
+        self.stat_tab_day_30.setObjectName(u"stat_tab_day_30")
+        self.stat_tab_day_30.setGeometry(QRect(110, 330, 1001, 111))
+        self.stat_tab_day_30.setStyleSheet(u"background-color: rgb(219, 219, 219);\n"
 "border: 0;\n"
 "font: 32pt \"MS Shell Dlg 2\";\n"
-"overflow-wrap: break-word; \n"
+"overflow-wrap: break-word; \n" 
+"text-decoration: underline; \n"
 "color: #000000;\n"
 "overflow-wrap: break-word;\n"
 "\n"
 "")
-        self.stat_tab6.setTextFormat(Qt.PlainText)
-        self.stat_tab6.setScaledContents(False)
-        self.stat_tab6.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
-        self.stat_tab6.setWordWrap(True)
-        self.stat_tab6.setOpenExternalLinks(False)
+        self.stat_tab_day_30.setTextFormat(Qt.PlainText)
+        self.stat_tab_day_30.setScaledContents(False)
+        self.stat_tab_day_30.setAlignment(Qt.AlignHCenter | Qt.AlignTop)
+        self.stat_tab_day_30.setWordWrap(True)
+        self.stat_tab_day_30.setOpenExternalLinks(False)
         self.training_window = QFrame(self.centralwidget)
         self.training_window.setObjectName(u"training_window")
         self.training_window.setGeometry(QRect(0, 89, 1201, 531))
@@ -315,9 +298,7 @@ class Ui_MainWindow(object):
 "font: 50pt \"MS Shell Dlg 2\";\n"
 "overflow-wrap: break-word; \n"
 "color: #000000;\n"
-"overflow-wrap: break-word;\n"
-"\n"
-"")
+"overflow-wrap: break-word;")
         self.text.setTextFormat(Qt.PlainText)
         self.text.setScaledContents(False)
         self.text.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
@@ -359,10 +340,10 @@ class Ui_MainWindow(object):
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:28pt;\">5) \u0427\u0442\u043e\u0431\u044b \u0441\u0433\u0435\u043d\u0435\u0440\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u043d\u043e\u0432\u044b\u0439 \u043d\u0430\u0431\u043e\u0440 \u0441\u043b\u043e\u0432 - \u043f\u043e\u0432\u0442\u043e\u0440\u0438\u0442\u0435 \u0448\u0430\u0433\u0438 1-3 \u0434\u0430\u043d\u043d\u043e\u0433\u043e \u0440\u0443\u043a\u043e\u0432\u043e\u0434\u0441\u0442\u0432\u0430.</span></p></body></html>", None))
         self.stat_tab2.setText(QCoreApplication.translate("MainWindow", u"(\u0441\u0438\u043c\u0432\u043e\u043b\u043e\u0432 \u0432 \u0441\u0435\u043a\u0443\u043d\u0434\u0443)", None))
         self.stat_tab1.setText(QCoreApplication.translate("MainWindow", u"\u0421\u0440\u0435\u0434\u043d\u044f\u044f \u0441\u043a\u043e\u0440\u043e\u0441\u0442\u044c \u043f\u0435\u0447\u0430\u0442\u0438", None))
-        self.stat_tab3.setText(QCoreApplication.translate("MainWindow", u"\u0437\u0430 1 \u0434\u0435\u043d\u044c:", None))
-        self.stat_tab4.setText(QCoreApplication.translate("MainWindow", u"\u0437\u0430 3 \u0434\u043d\u044f:", None))
-        self.stat_tab5.setText(QCoreApplication.translate("MainWindow", u"\u0437\u0430 10 \u0434\u043d\u0435\u0439:", None))
-        self.stat_tab6.setText(QCoreApplication.translate("MainWindow", u"\u0437\u0430 30 \u0434\u043d\u0435\u0439:", None))
+        self.stat_tab_day_1.setText(QCoreApplication.translate("MainWindow", u"\u0437\u0430 1 \u0434\u0435\u043d\u044c:", None))
+        self.stat_tab_day_3.setText(QCoreApplication.translate("MainWindow", u"\u0437\u0430 3 \u0434\u043d\u044f:", None))
+        self.stat_tab_day_10.setText(QCoreApplication.translate("MainWindow", u"\u0437\u0430 10 \u0434\u043d\u0435\u0439:", None))
+        self.stat_tab_day_30.setText(QCoreApplication.translate("MainWindow", u"\u0437\u0430 30 \u0434\u043d\u0435\u0439:", None))
         self.text_for_input.setText(QCoreApplication.translate("MainWindow", u"\u044b\u043e\u043f \u0434\u043b\u044b\u0432\u043e \u0434\u043b\u043e\u0430\u0434\u043b \u043f\u043e\u043b\u043e \u044b\u0434\u043f\u043b\u0432\u0440\u0434\u043e\u044b \u0443\u043a\u0440\u0434\u043b\u043f\u043e\u044b\u0434\u043b\u0430 \u043f\u043e\u044b\u043b\u0436\u043f \u0440\u0434\u043b\u0443\u043a \u043f\u0442\u0434\u043b\u044b\u043a\u0432\u043e\u043f \u0436\u0432\u0430\u043b\u043e \u043f\u0434\u043b\u043e\u044f\u0430\u0432 \u043b\u043f\u043e\u0432\u043b\u0434\u0447\u0430\u043e \u043e\u043a\u0432 \u0449\u0436\u0434\u0443\u044b\u043e\u043a \u043f\u043b\u044b\u0443\u043a\u043e\u0435 ", None))
         self.text_for_input_printed.setText(QCoreApplication.translate("MainWindow", u"\u044b\u043e\u043f \u0434\u043b\u044b\u0432\u043e \u0434\u043b\u043e\u0430\u0434\u043b \u043f\u043e\u043b\u043e \u044b\u0434\u043f\u043b\u0432\u0440\u0434\u043e\u044b \u0443\u043a\u0440\u0434\u043b\u043f\u043e\u044b\u0434\u043b\u0430 \u043f\u043e\u044b\u043b\u0436\u043f \u0440\u0434\u043b\u0443\u043a \u043f\u0442\u0434\u043b\u044b\u043a\u0432\u043e\u043f \u0436\u0432\u0430\u043b\u043e \u043f\u0434\u043b\u043e\u044f\u0430\u0432 \u043b\u043f\u043e\u0432\u043b\u0434\u0447\u0430\u043e \u043e\u043a\u0432 \u0449\u0436\u0434\u0443\u044b\u043e\u043a \u043f\u043b\u044b\u0443\u043a\u043e\u0435 ", None))
         self.text.setText(QCoreApplication.translate("MainWindow", u"\u044b\u043e\u043f \u0434\u043b\u044b\u0432\u043e \u0434\u043b\u043e\u0430\u0434\u043b \u043f\u043e\u043b\u043e \u044b\u0434\u043f\u043b\u0432\u0440\u0434\u043e\u044b \u0443\u043a\u0440\u0434\u043b\u043f\u043e\u044b\u0434\u043b\u0430 \u043f\u043e\u044b\u043b\u0436\u043f \u0440\u0434\u043b\u0443\u043a \u043f\u0442\u0434\u043b\u044b\u043a\u0432\u043e\u043f \u0436\u0432\u0430\u043b\u043e \u043f\u0434\u043b\u043e\u044f\u0430\u0432 \u043b\u043f\u043e\u0432\u043b\u0434\u0447\u0430\u043e \u043e\u043a\u0432 \u0449\u0436\u0434\u0443\u044b\u043e\u043a \u043f\u043b\u044b\u0443\u043a\u043e\u0435 ", None))
