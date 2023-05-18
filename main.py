@@ -44,10 +44,12 @@ class keyboard_trainer(QMainWindow):
         self.ui.start_button.setText('Пауза')
         self.ui.info_frame.hide()
         self.ui.stat_frame.hide()
+        self.ui.result_frame.hide()
         self.ui.training_window.show()
         self.words['rus1'] = self.get_words_from_db()
         self.start_time = time.perf_counter()
         self.generate_words()
+
 
 
 
@@ -57,6 +59,7 @@ class keyboard_trainer(QMainWindow):
         self.current_page = 'information_page'
         self.ui.training_window.hide()
         self.ui.stat_frame.hide()
+        self.ui.result_frame.hide()
         self.ui.info_frame.show()
 
     def show_statistics_page(self):
@@ -71,7 +74,18 @@ class keyboard_trainer(QMainWindow):
 
         self.ui.training_window.hide()
         self.ui.info_frame.hide()
+        self.ui.result_frame.hide()
         self.ui.stat_frame.show()
+
+    def show_result_page(self):
+        if self.current_page == 'result_page':
+            return
+
+        self.ui.result_stat_tab_day_1.setText('Время : ' + str(time.perf_counter() - self.start_time))
+        self.ui.training_window.hide()
+        self.ui.info_frame.hide()
+        self.ui.stat_frame.hide()
+        self.ui.result_frame.show()
 
     def change_difficulty(self):
         if self.current_page == 'training_page':
@@ -127,7 +141,8 @@ class keyboard_trainer(QMainWindow):
         words = self.words['rus1']
         if len(words) == 0:
             self.show_statistics_page()
-            print(self.start_time - time.perf_counter())
+            print(time.perf_counter() - self.start_time)
+            self.show_result_page()
         while len(words) > 0 and max_print_line_size > len(words[0] + ' '):
             max_print_line_size -= len(words[0])
             print_line += words.pop(0) + ' '
@@ -158,7 +173,7 @@ class keyboard_trainer(QMainWindow):
 
     def get_words_from_db(self):
         # TODO: Вытягивание с БД
-        return [str(random.randint(9,100000)) for i in range(1000, 100000, 10000)]
+        return [str(random.randint(9,100000)) for i in range(1000, 50000, 10000)]
 
 
 # testing

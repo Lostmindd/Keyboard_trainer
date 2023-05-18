@@ -34,19 +34,19 @@ class Ui_MainWindow(object):
         self.start_button.setEnabled(True)
         self.start_button.setGeometry(QRect(20, 20, 161, 51))
         self.start_button.setStyleSheet(u"QPushButton { \n"
-"background-color:rgb(255, 255, 255) ;\n"
+"background-color:rgb(89, 175, 255) ;\n"
 "border-radius: 20px; \n"
 "font: 24pt \"MS Shell Dlg 2\";\n"
 "color: #000000;\n"
 "}\n"
 "QPushButton:hover { \n"
-"background-color:rgb(230, 230, 230) ;\n"
+"background-color:rgb(69, 155, 235) ;\n"
 "border-radius: 20px; \n"
 "font: 24pt \"MS Shell Dlg 2\";\n"
 "color: #000000;\n"
 "}\n"
 "QPushButton:pressed { \n"
-"background-color:rgb(200, 200, 200) ;\n"
+"background-color:rgb(39, 125, 205) ;\n"
 "border-radius: 20px; \n"
 "font: 24pt \"MS Shell Dlg 2\";\n"
 "color: #000000;\n"
@@ -255,6 +255,115 @@ class Ui_MainWindow(object):
         self.stat_tab_day_30.setAlignment(Qt.AlignHCenter | Qt.AlignTop)
         self.stat_tab_day_30.setWordWrap(True)
         self.stat_tab_day_30.setOpenExternalLinks(False)
+  #=================
+        self.result_frame = QFrame(self.centralwidget)
+        self.result_frame.setObjectName(u"result_frame")
+        self.result_frame.setEnabled(True)
+        self.result_frame.setGeometry(QRect(0, 89, 1211, 541))
+        self.result_frame.setStyleSheet(u"border: 0;")
+        self.result_frame.setFrameShape(QFrame.StyledPanel)
+        self.result_frame.setFrameShadow(QFrame.Raised)
+        self.result_stat_tab2 = QLabel(self.result_frame)
+        self.result_stat_tab2.setObjectName(u"stat_tab2")
+        self.result_stat_tab2.setGeometry(QRect(10, 80, 1201, 121))
+        self.result_stat_tab2.setStyleSheet(u"background-color: rgb(219, 219, 219);\n"
+                                     "border: 0;\n"
+                                     "font: 32pt \"MS Shell Dlg 2\";\n"
+                                     "overflow-wrap: break-word; \n"
+                                     "color: #000000;\n"
+                                     "overflow-wrap: break-word;\n"
+                                     "\n"
+                                     "")
+        self.result_stat_tab2.setTextFormat(Qt.PlainText)
+        self.result_stat_tab2.setScaledContents(False)
+        self.result_stat_tab2.setAlignment(Qt.AlignHCenter | Qt.AlignTop)
+        self.result_stat_tab2.setWordWrap(True)
+        self.result_stat_tab2.setOpenExternalLinks(False)
+        self.result_stat_tab1 = QLabel(self.result_frame)
+        self.result_stat_tab1.setObjectName(u"stat_tab1")
+        self.result_stat_tab1.setGeometry(QRect(10, 0, 1201, 91))
+        self.result_stat_tab1.setStyleSheet(u"background-color: rgb(219, 219, 219);\n"
+                                     "border: 0;\n"
+                                     "font: 40pt \"MS Shell Dlg 2\";\n"
+                                     "overflow-wrap: break-word; \n"
+                                     "color: #000000;\n"
+                                     "overflow-wrap: break-word;\n"
+                                     "\n"
+                                     "")
+        self.result_stat_tab1.setTextFormat(Qt.PlainText)
+        self.result_stat_tab1.setScaledContents(False)
+        self.result_stat_tab1.setAlignment(Qt.AlignHCenter | Qt.AlignTop)
+        self.result_stat_tab1.setWordWrap(True)
+        self.result_stat_tab1.setOpenExternalLinks(False)
+        self.result_stat_tab_day_1 = QLabel(self.result_frame)
+        self.result_stat_tab_day_1.setObjectName(u"stat_tab_day_1")
+        self.result_stat_tab_day_1.setGeometry(QRect(10, 140, 1201, 81))
+        self.result_stat_tab_day_1.setStyleSheet(u"background-color: rgb(219, 219, 219);\n"
+                                          "border: 0;\n"
+                                          "font: 32pt \"MS Shell Dlg 2\";\n"
+                                          "overflow-wrap: break-word; \n"
+                                          "text-decoration: underline; \n"
+                                          "color: #000000;\n"
+                                          "overflow-wrap: break-word;\n"
+                                          "\n"
+                                          "")
+        self.result_stat_tab_day_1.setTextFormat(Qt.PlainText)
+        self.result_stat_tab_day_1.setScaledContents(False)
+        self.result_stat_tab_day_1.setAlignment(Qt.AlignHCenter | Qt.AlignTop)
+        self.result_stat_tab_day_1.setWordWrap(True)
+        self.result_stat_tab_day_1.setOpenExternalLinks(False)
+        self.result_stat_tab_day_3 = QLabel(self.result_frame)
+        self.result_stat_tab_day_3.setObjectName(u"stat_tab_day_3")
+        self.result_stat_tab_day_3.setGeometry(QRect(10, 200, 1201, 81))
+        self.result_stat_tab_day_3.setStyleSheet(u"background-color: rgb(219, 219, 219);\n"
+                                          "border: 0;\n"
+                                          "font: 32pt \"MS Shell Dlg 2\";\n"
+                                          "overflow-wrap: break-word; \n"
+                                          "text-decoration: underline; \n"
+                                          "color: #000000;\n"
+                                          "overflow-wrap: break-word;\n"
+                                          "\n"
+                                          "")
+        self.result_stat_tab_day_3.setTextFormat(Qt.PlainText)
+        self.result_stat_tab_day_3.setScaledContents(False)
+        self.result_stat_tab_day_3.setAlignment(Qt.AlignHCenter | Qt.AlignTop)
+        self.result_stat_tab_day_3.setWordWrap(True)
+        self.result_stat_tab_day_3.setOpenExternalLinks(False)
+        self.result_stat_tab_day_10 = QLabel(self.result_frame)
+        self.result_stat_tab_day_10.setObjectName(u"stat_tab_day_10")
+        self.result_stat_tab_day_10.setGeometry(QRect(10, 260, 1211, 81))
+        self.result_stat_tab_day_10.setStyleSheet(u"background-color: rgb(219, 219, 219);\n"
+                                           "border: 0;\n"
+                                           "font: 32pt \"MS Shell Dlg 2\";\n"
+                                           "overflow-wrap: break-word; \n"
+                                           "text-decoration: underline; \n"
+                                           "color: #000000;\n"
+                                           "overflow-wrap: break-word;\n"
+                                           "\n"
+                                           "")
+        self.result_stat_tab_day_10.setTextFormat(Qt.PlainText)
+        self.result_stat_tab_day_10.setScaledContents(False)
+        self.result_stat_tab_day_10.setAlignment(Qt.AlignHCenter | Qt.AlignTop)
+        self.result_stat_tab_day_10.setWordWrap(True)
+        self.result_stat_tab_day_10.setOpenExternalLinks(False)
+        self.result_stat_tab_day_30 = QLabel(self.result_frame)
+        self.result_stat_tab_day_30.setObjectName(u"stat_tab_day_30")
+        self.result_stat_tab_day_30.setGeometry(QRect(110, 330, 1001, 111))
+        self.result_stat_tab_day_30.setStyleSheet(u"background-color: rgb(219, 219, 219);\n"
+                                           "border: 0;\n"
+                                           "font: 32pt \"MS Shell Dlg 2\";\n"
+                                           "overflow-wrap: break-word; \n"
+                                           "text-decoration: underline; \n"
+                                           "color: #000000;\n"
+                                           "overflow-wrap: break-word;\n"
+                                           "\n"
+                                           "")
+        self.result_stat_tab_day_30.setTextFormat(Qt.PlainText)
+        self.result_stat_tab_day_30.setScaledContents(False)
+        self.result_stat_tab_day_30.setAlignment(Qt.AlignHCenter | Qt.AlignTop)
+        self.result_stat_tab_day_30.setWordWrap(True)
+        self.result_stat_tab_day_30.setOpenExternalLinks(False)
+  #=================
         self.training_window = QFrame(self.centralwidget)
         self.training_window.setObjectName(u"training_window")
         self.training_window.setGeometry(QRect(0, 89, 1201, 531))
