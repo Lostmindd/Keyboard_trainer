@@ -282,8 +282,9 @@ class Ui_MainWindow(object):
         self.text_for_input_printed.setGeometry(QRect(40, 20, 1121, 101))
         self.text_for_input_printed.setStyleSheet(u"background-color: rgb(219, 219, 219,0);\n"
 "border: 0;\n"
-"font: 50pt \"MS Shell Dlg 2\"; \n"
-"color: #FFFFFF;\n"
+"font: 50pt \"MS Shell Dlg 2\"; \n"                                              
+"text-decoration: underline; \n"
+"color: #FFF345;\n"
 "\n"
 "\n"
 "")
@@ -301,7 +302,13 @@ class Ui_MainWindow(object):
 "overflow-wrap: break-word; \n"
 "color: #000000;\n"
 "word-wrap: break-word;")
-
+        self.start_button.setFocusPolicy(Qt.NoFocus)
+        self.stat_button.setFocusPolicy(Qt.NoFocus)
+        self.info_button.setFocusPolicy(Qt.NoFocus)
+        self.difficulty_button.setFocusPolicy(Qt.NoFocus)
+        self.en_button.setFocusPolicy(Qt.NoFocus)
+        self.ru_button.setFocusPolicy(Qt.NoFocus)
+        self.info_tab.setFocusPolicy(Qt.NoFocus)
         self.text.setTextFormat(Qt.PlainText)
         self.text.setScaledContents(False)
         self.text.setAlignment(Qt.AlignLeft|Qt.AlignTop)

@@ -1,6 +1,7 @@
 # from getmac import get_mac_address as gma
 #
 # print(gma())
+import time
 import random
 import sys
 
@@ -18,6 +19,15 @@ class keyboard_trainer(QMainWindow):
         self.current_page = ''
         self.current_difficulty = 'низкая'
         self.current_language = 'ru'
+        self.last_pressed_key = ''
+        self.remaining_text = ''
+        self.print_line = ''
+        self.input_text = ''
+        self.words = {}
+        self.current_input_key_index = 0
+        self.start_time = 0
+        self.current_input_key_index = 0
+        # self.print_line_size = 0
         self.show_information_page()
         # Buttons
         self.ui.start_button.clicked.connect(self.show_training_page)
@@ -35,7 +45,11 @@ class keyboard_trainer(QMainWindow):
         self.ui.info_frame.hide()
         self.ui.stat_frame.hide()
         self.ui.training_window.show()
+        self.words['rus1'] = self.get_words_from_db()
+        self.start_time = time.perf_counter()
         self.generate_words()
+
+
 
     def show_information_page(self):
         if self.current_page == 'information_page':
@@ -107,22 +121,44 @@ class keyboard_trainer(QMainWindow):
         return user_stats
 
     def generate_words(self):
-        print_line_size = 30
+        max_print_line_size = 30
         print_line = ''
-        words = self.get_words_from_db()
-        while print_line_size > len(words[-1] + ' '):
-            print_line_size -= len(words[-1])
-            print_line += words.pop() + ' '
-
+        self.current_input_key_index = 0
+        words = self.words['rus1']
+        if len(words) == 0:
+            self.show_statistics_page()
+            print(self.start_time - time.perf_counter())
+        while len(words) > 0 and max_print_line_size > len(words[0] + ' '):
+            max_print_line_size -= len(words[0])
+            print_line += words.pop(0) + ' '
         remaining_text = ' '.join(words)
+        self.input_text = ''
+        self.ui.text_for_input_printed.setText(self.input_text)
+        self.print_line = print_line
+        self.remaining_text = remaining_text
         self.ui.text_for_input.setText(print_line)
         self.ui.text.setText(remaining_text)
+        # self.ui.start_button.setEnabled(False)
+
+
+    def check_key(self, key):
+        if key == self.print_line[self.current_input_key_index]:
+            self.input_text += self.print_line[self.current_input_key_index]
+            self.ui.text_for_input_printed.setText(self.input_text)
+            self.current_input_key_index += 1
+        if self.current_input_key_index == len(self.print_line):
+            self.generate_words()
 
     def keyPressEvent(self, event):
-        print(event.text())
+        if self.current_page != 'training_page':
+            return
+        key = event.text()
+        print(key)
+        self.check_key(key)
+
     def get_words_from_db(self):
         # TODO: Вытягивание с БД
-        return [str(random.randint(9,100000)) for i in range(1000, 3000000, 10000)]
+        return [str(random.randint(9,100000)) for i in range(1000, 100000, 10000)]
 
 
 # testing
