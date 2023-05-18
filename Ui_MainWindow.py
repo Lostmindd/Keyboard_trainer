@@ -14,7 +14,7 @@ class Ui_MainWindow(object):
         MainWindow.setMaximumSize(QSize(1200, 618))
         MainWindow.setBaseSize(QSize(10, 10))
         MainWindow.setAutoFillBackground(False)
-        MainWindow.setStyleSheet(u"background-color: rgb(219, 219, 219);")
+        MainWindow.setStyleSheet(u"background-color: rgb(245, 245, 245);")
         MainWindow.setAnimated(True)
         MainWindow.setDocumentMode(False)
         MainWindow.setTabShape(QTabWidget.Rounded)
@@ -138,7 +138,7 @@ class Ui_MainWindow(object):
         self.info_tab = QTextBrowser(self.info_frame)
         self.info_tab.setObjectName(u"info_tab")
         self.info_tab.setGeometry(QRect(10, 0, 1191, 531))
-        self.info_tab.setStyleSheet(u"background-color: rgb(219, 219, 219);\n"
+        self.info_tab.setStyleSheet(u"background-color: rgb(245, 245, 245);\n"
 "border: 0;\n"
 "font: 50pt \"MS Shell Dlg 2\";\n"
 "overflow-wrap: break-word; \n"
@@ -158,7 +158,7 @@ class Ui_MainWindow(object):
         self.stat_tab2 = QLabel(self.stat_frame)
         self.stat_tab2.setObjectName(u"stat_tab2")
         self.stat_tab2.setGeometry(QRect(10, 80, 1201, 121))
-        self.stat_tab2.setStyleSheet(u"background-color: rgb(219, 219, 219);\n"
+        self.stat_tab2.setStyleSheet(u"background-color: rgb(245, 245, 245);\n"
 "border: 0;\n"
 "font: 32pt \"MS Shell Dlg 2\";\n"
 "overflow-wrap: break-word; \n"
@@ -174,7 +174,7 @@ class Ui_MainWindow(object):
         self.stat_tab1 = QLabel(self.stat_frame)
         self.stat_tab1.setObjectName(u"stat_tab1")
         self.stat_tab1.setGeometry(QRect(10, 0, 1201, 91))
-        self.stat_tab1.setStyleSheet(u"background-color: rgb(219, 219, 219);\n"
+        self.stat_tab1.setStyleSheet(u"background-color: rgb(245, 245, 245);\n"
 "border: 0;\n"
 "font: 40pt \"MS Shell Dlg 2\";\n"
 "overflow-wrap: break-word; \n"
@@ -190,7 +190,7 @@ class Ui_MainWindow(object):
         self.stat_tab_day_1 = QLabel(self.stat_frame)
         self.stat_tab_day_1.setObjectName(u"stat_tab_day_1")
         self.stat_tab_day_1.setGeometry(QRect(10, 140, 1201, 81))
-        self.stat_tab_day_1.setStyleSheet(u"background-color: rgb(219, 219, 219);\n"
+        self.stat_tab_day_1.setStyleSheet(u"background-color: rgb(245, 245, 245);\n"
 "border: 0;\n"
 "font: 32pt \"MS Shell Dlg 2\";\n"
 "overflow-wrap: break-word; \n"
@@ -207,7 +207,7 @@ class Ui_MainWindow(object):
         self.stat_tab_day_3 = QLabel(self.stat_frame)
         self.stat_tab_day_3.setObjectName(u"stat_tab_day_3")
         self.stat_tab_day_3.setGeometry(QRect(10, 200, 1201, 81))
-        self.stat_tab_day_3.setStyleSheet(u"background-color: rgb(219, 219, 219);\n"
+        self.stat_tab_day_3.setStyleSheet(u"background-color: rgb(245, 245, 245);\n"
 "border: 0;\n"
 "font: 32pt \"MS Shell Dlg 2\";\n"
 "overflow-wrap: break-word; \n"
@@ -224,7 +224,7 @@ class Ui_MainWindow(object):
         self.stat_tab_day_10 = QLabel(self.stat_frame)
         self.stat_tab_day_10.setObjectName(u"stat_tab_day_10")
         self.stat_tab_day_10.setGeometry(QRect(10, 260, 1211, 81))
-        self.stat_tab_day_10.setStyleSheet(u"background-color: rgb(219, 219, 219);\n"
+        self.stat_tab_day_10.setStyleSheet(u"background-color: rgb(245, 245, 245);\n"
 "border: 0;\n"
 "font: 32pt \"MS Shell Dlg 2\";\n"
 "overflow-wrap: break-word; \n"
@@ -241,7 +241,7 @@ class Ui_MainWindow(object):
         self.stat_tab_day_30 = QLabel(self.stat_frame)
         self.stat_tab_day_30.setObjectName(u"stat_tab_day_30")
         self.stat_tab_day_30.setGeometry(QRect(110, 330, 1001, 111))
-        self.stat_tab_day_30.setStyleSheet(u"background-color: rgb(219, 219, 219);\n"
+        self.stat_tab_day_30.setStyleSheet(u"background-color: rgb(245, 245, 245);\n"
 "border: 0;\n"
 "font: 32pt \"MS Shell Dlg 2\";\n"
 "overflow-wrap: break-word; \n" 
@@ -266,7 +266,7 @@ class Ui_MainWindow(object):
         self.result_stat_tab2 = QLabel(self.result_frame)
         self.result_stat_tab2.setObjectName(u"stat_tab2")
         self.result_stat_tab2.setGeometry(QRect(10, 80, 1201, 121))
-        self.result_stat_tab2.setStyleSheet(u"background-color: rgb(219, 219, 219);\n"
+        self.result_stat_tab2.setStyleSheet(u"background-color: rgb(245, 245, 245);\n"
                                      "border: 0;\n"
                                      "font: 32pt \"MS Shell Dlg 2\";\n"
                                      "overflow-wrap: break-word; \n"
@@ -282,7 +282,7 @@ class Ui_MainWindow(object):
         self.result_stat_tab1 = QLabel(self.result_frame)
         self.result_stat_tab1.setObjectName(u"stat_tab1")
         self.result_stat_tab1.setGeometry(QRect(10, 0, 1201, 91))
-        self.result_stat_tab1.setStyleSheet(u"background-color: rgb(219, 219, 219);\n"
+        self.result_stat_tab1.setStyleSheet(u"background-color: rgb(245, 245, 245);\n"
                                      "border: 0;\n"
                                      "font: 40pt \"MS Shell Dlg 2\";\n"
                                      "overflow-wrap: break-word; \n"
@@ -298,7 +298,7 @@ class Ui_MainWindow(object):
         self.result_stat_tab_day_1 = QLabel(self.result_frame)
         self.result_stat_tab_day_1.setObjectName(u"stat_tab_day_1")
         self.result_stat_tab_day_1.setGeometry(QRect(10, 140, 1201, 81))
-        self.result_stat_tab_day_1.setStyleSheet(u"background-color: rgb(219, 219, 219);\n"
+        self.result_stat_tab_day_1.setStyleSheet(u"background-color: rgb(245, 245, 245);\n"
                                           "border: 0;\n"
                                           "font: 32pt \"MS Shell Dlg 2\";\n"
                                           "overflow-wrap: break-word; \n"
@@ -315,7 +315,7 @@ class Ui_MainWindow(object):
         self.result_stat_tab_day_3 = QLabel(self.result_frame)
         self.result_stat_tab_day_3.setObjectName(u"stat_tab_day_3")
         self.result_stat_tab_day_3.setGeometry(QRect(10, 200, 1201, 81))
-        self.result_stat_tab_day_3.setStyleSheet(u"background-color: rgb(219, 219, 219);\n"
+        self.result_stat_tab_day_3.setStyleSheet(u"background-color: rgb(245, 245, 245);\n"
                                           "border: 0;\n"
                                           "font: 32pt \"MS Shell Dlg 2\";\n"
                                           "overflow-wrap: break-word; \n"
@@ -332,7 +332,7 @@ class Ui_MainWindow(object):
         self.result_stat_tab_day_10 = QLabel(self.result_frame)
         self.result_stat_tab_day_10.setObjectName(u"stat_tab_day_10")
         self.result_stat_tab_day_10.setGeometry(QRect(10, 260, 1211, 81))
-        self.result_stat_tab_day_10.setStyleSheet(u"background-color: rgb(219, 219, 219);\n"
+        self.result_stat_tab_day_10.setStyleSheet(u"background-color: rgb(245, 245, 245);\n"
                                            "border: 0;\n"
                                            "font: 32pt \"MS Shell Dlg 2\";\n"
                                            "overflow-wrap: break-word; \n"
@@ -349,7 +349,7 @@ class Ui_MainWindow(object):
         self.result_stat_tab_day_30 = QLabel(self.result_frame)
         self.result_stat_tab_day_30.setObjectName(u"stat_tab_day_30")
         self.result_stat_tab_day_30.setGeometry(QRect(110, 330, 1001, 111))
-        self.result_stat_tab_day_30.setStyleSheet(u"background-color: rgb(219, 219, 219);\n"
+        self.result_stat_tab_day_30.setStyleSheet(u"background-color: rgb(245, 245, 245);\n"
                                            "border: 0;\n"
                                            "font: 32pt \"MS Shell Dlg 2\";\n"
                                            "overflow-wrap: break-word; \n"
@@ -373,7 +373,7 @@ class Ui_MainWindow(object):
         self.text_for_input = QLabel(self.training_window)
         self.text_for_input.setObjectName(u"text_for_input")
         self.text_for_input.setGeometry(QRect(40, 20, 1121, 101))
-        self.text_for_input.setStyleSheet(u"background-color: rgb(219, 219, 219);\n"
+        self.text_for_input.setStyleSheet(u"background-color: rgb(245, 245, 245);\n"
 "border: 0;\n"
 "font: 50pt \"MS Shell Dlg 2\";\n"
 "overflow-wrap: break-word; \n"
@@ -405,7 +405,7 @@ class Ui_MainWindow(object):
         self.text = QLabel(self.training_window)
         self.text.setObjectName(u"text")
         self.text.setGeometry(QRect(40, 110, 1121, 391))
-        self.text.setStyleSheet(u"background-color: rgb(219, 219, 219);\n"
+        self.text.setStyleSheet(u"background-color: rgb(245, 245, 245);\n"
 "border: 0;\n"
 "font: 50pt \"MS Shell Dlg 2\";\n"
 "overflow-wrap: break-word; \n"
