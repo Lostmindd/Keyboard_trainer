@@ -27,6 +27,10 @@ class keyboard_trainer(QMainWindow):
         self.current_input_key_index = 0
         self.start_time = 0
         self.current_input_key_index = 0
+        self.current_error_num = 0
+        self.current_printed_word_num = 0
+        self.current_printed_char_num = 0
+        self.current_error_num = 0
         # self.print_line_size = 0
         self.show_information_page()
         # Buttons
@@ -48,6 +52,9 @@ class keyboard_trainer(QMainWindow):
         self.ui.training_window.show()
         self.words['rus1'] = self.get_words_from_db()
         self.start_time = time.perf_counter()
+        self.current_error_num = 0
+        self.current_printed_word_num = 0
+        self.current_printed_char_num = 0
         self.generate_words()
 
 
@@ -80,13 +87,24 @@ class keyboard_trainer(QMainWindow):
     def show_result_page(self):
         if self.current_page == 'result_page':
             return
-
-        self.ui.result_stat_tab_day_1.setText('Время : ' + str(time.perf_counter() - self.start_time))
+        training_time = round(time.perf_counter() - self.start_time, 2)
+        char_input_speed = round(self.current_printed_char_num - self.start_time, 2)
+        accuracy = round(1 - self.current_error_num/self.current_printed_char_num, 2)
+        self.ui.result_stat_tab_day_1.setText('Время (секунд): ' + str(training_time))
+        self.ui.result_stat_tab_day_3.setText('Напечатано слов: ' + str(self.current_printed_word_num))
+        self.ui.result_stat_tab_day_10.setText('Напечатано символов: ' + str(self.current_printed_char_num))
+        self.ui.result_stat_tab_day_30.setText('Совершенно ошибок: ' + str(self.current_error_num))
+        self.ui.result_stat_tab_day_4.setText('Скорость набора (символов в секунду): ' + str(char_input_speed))
+        self.ui.result_stat_tab_day_5.setText('Точность: ' + str(accuracy))
+        self.ui.result_stat_tab1.setText('Итоги тренировки')
+        self.save_result()
         self.ui.training_window.hide()
         self.ui.info_frame.hide()
         self.ui.stat_frame.hide()
         self.ui.result_frame.show()
 
+    def save_result(self):
+        pass
     def change_difficulty(self):
         if self.current_page == 'training_page':
             return
@@ -144,6 +162,7 @@ class keyboard_trainer(QMainWindow):
             print(time.perf_counter() - self.start_time)
             self.show_result_page()
         while len(words) > 0 and max_print_line_size > len(words[0] + ' '):
+            self.current_printed_word_num += len(words[0])
             max_print_line_size -= len(words[0])
             print_line += words.pop(0) + ' '
         remaining_text = ' '.join(words)
@@ -161,6 +180,9 @@ class keyboard_trainer(QMainWindow):
             self.input_text += self.print_line[self.current_input_key_index]
             self.ui.text_for_input_printed.setText(self.input_text)
             self.current_input_key_index += 1
+            self.current_printed_char_num += 1
+        else:
+            self.current_error_num += 1
         if self.current_input_key_index == len(self.print_line):
             self.generate_words()
 
@@ -173,7 +195,7 @@ class keyboard_trainer(QMainWindow):
 
     def get_words_from_db(self):
         # TODO: Вытягивание с БД
-        return [str(random.randint(9,100000)) for i in range(1000, 50000, 10000)]
+        return [str(random.randint(9,100000)) for i in range(1000, 20101, 10000)]
 
 
 # testing

@@ -348,7 +348,7 @@ class Ui_MainWindow(object):
         self.result_stat_tab_day_10.setOpenExternalLinks(False)
         self.result_stat_tab_day_30 = QLabel(self.result_frame)
         self.result_stat_tab_day_30.setObjectName(u"stat_tab_day_30")
-        self.result_stat_tab_day_30.setGeometry(QRect(110, 330, 1001, 111))
+        self.result_stat_tab_day_30.setGeometry(QRect(110, 320, 1001, 111))
         self.result_stat_tab_day_30.setStyleSheet(u"background-color: rgb(245, 245, 245);\n"
                                            "border: 0;\n"
                                            "font: 32pt \"MS Shell Dlg 2\";\n"
@@ -363,6 +363,42 @@ class Ui_MainWindow(object):
         self.result_stat_tab_day_30.setAlignment(Qt.AlignHCenter | Qt.AlignTop)
         self.result_stat_tab_day_30.setWordWrap(True)
         self.result_stat_tab_day_30.setOpenExternalLinks(False)
+
+        self.result_stat_tab_day_4 = QLabel(self.result_frame)
+        self.result_stat_tab_day_4.setObjectName(u"stat_tab_day_30")
+        self.result_stat_tab_day_4.setGeometry(QRect(110, 380, 1001, 111))
+        self.result_stat_tab_day_4.setStyleSheet(u"background-color: rgb(245, 245, 245);\n"
+                                                  "border: 0;\n"
+                                                  "font: 32pt \"MS Shell Dlg 2\";\n"
+                                                  "overflow-wrap: break-word; \n"
+                                                  "text-decoration: underline; \n"
+                                                  "color: #000000;\n"
+                                                  "overflow-wrap: break-word;\n"
+                                                  "\n"
+                                                  "")
+        self.result_stat_tab_day_4.setTextFormat(Qt.PlainText)
+        self.result_stat_tab_day_4.setScaledContents(False)
+        self.result_stat_tab_day_4.setAlignment(Qt.AlignHCenter | Qt.AlignTop)
+        self.result_stat_tab_day_4.setWordWrap(True)
+        self.result_stat_tab_day_4.setOpenExternalLinks(False)
+
+        self.result_stat_tab_day_5 = QLabel(self.result_frame)
+        self.result_stat_tab_day_5.setObjectName(u"stat_tab_day_30")
+        self.result_stat_tab_day_5.setGeometry(QRect(110, 440, 1001, 111))
+        self.result_stat_tab_day_5.setStyleSheet(u"background-color: rgb(245, 245, 245);\n"
+                                                 "border: 0;\n"
+                                                 "font: 32pt \"MS Shell Dlg 2\";\n"
+                                                 "overflow-wrap: break-word; \n"
+                                                 "text-decoration: underline; \n"
+                                                 "color: #000000;\n"
+                                                 "overflow-wrap: break-word;\n"
+                                                 "\n"
+                                                 "")
+        self.result_stat_tab_day_5.setTextFormat(Qt.PlainText)
+        self.result_stat_tab_day_5.setScaledContents(False)
+        self.result_stat_tab_day_5.setAlignment(Qt.AlignHCenter | Qt.AlignTop)
+        self.result_stat_tab_day_5.setWordWrap(True)
+        self.result_stat_tab_day_5.setOpenExternalLinks(False)
   #=================
         self.training_window = QFrame(self.centralwidget)
         self.training_window.setObjectName(u"training_window")
@@ -392,8 +428,8 @@ class Ui_MainWindow(object):
         self.text_for_input_printed.setStyleSheet(u"background-color: rgb(219, 219, 219,0);\n"
 "border: 0;\n"
 "font: 50pt \"MS Shell Dlg 2\"; \n"                                              
-"text-decoration: underline; \n"
-"color: #FFF345;\n"
+
+"color: #555999;\n"
 "\n"
 "\n"
 "")
@@ -423,6 +459,19 @@ class Ui_MainWindow(object):
         self.text.setAlignment(Qt.AlignLeft|Qt.AlignTop)
         self.text.setWordWrap(True)
         self.text.setOpenExternalLinks(False)
+
+        self.gradient = QLabel(self.training_window)
+        self.gradient.setObjectName(u"gradient")
+        self.gradient.setGeometry(QRect(40, 110, 1121, 391))
+        self.gradient.setStyleSheet(
+            u"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(245, 245, 245, 150), stop:1 rgba(245, 245, 245, 255));\n"
+            "")
+        self.gradient.setTextFormat(Qt.PlainText)
+        self.gradient.setScaledContents(False)
+        self.gradient.setAlignment(Qt.AlignLeading | Qt.AlignLeft | Qt.AlignTop)
+        self.gradient.setWordWrap(True)
+        self.gradient.setOpenExternalLinks(False)
+
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
