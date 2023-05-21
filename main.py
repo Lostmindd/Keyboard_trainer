@@ -1,10 +1,13 @@
-# from getmac import get_mac_address as gma
-#
-# print(gma())
+from getmac import get_mac_address
+
+
 import time
 import random
 import sys
+import psycopg2
 
+from PySide6 import QtGui, QtWidgets
+from PySide6.QtCore import Qt
 from PySide6.QtWidgets import QApplication, QMainWindow
 from PySide6.QtGui import QFontDatabase
 
@@ -33,6 +36,7 @@ class keyboard_trainer(QMainWindow):
         self.current_printed_word_num = 0
         self.current_printed_char_num = 0
         self.current_error_num = 0
+        self.connect_cursor = None
         # self.print_line_size = 0
         self.show_information_page()
         # Buttons
@@ -89,10 +93,13 @@ class keyboard_trainer(QMainWindow):
         self.ui.start_button.setText('Старт')
         self.current_page = 'statistics_page'
         user_stats = self.get_user_stats()
-        self.ui.stat_tab_day_1.setText('за 1 день: ' + str(user_stats[0]))
-        self.ui.stat_tab_day_3.setText('за 3 дня: ' + str(user_stats[1]))
-        self.ui.stat_tab_day_10.setText('за 10 дней: ' + str(user_stats[2]))
-        self.ui.stat_tab_day_30.setText('за 30 дней: ' + str(user_stats[3]))
+        for column in range(3):
+            for row in range(6):
+                table_item = QtWidgets.QTableWidgetItem()
+                table_item.setTextAlignment(Qt.AlignCenter)
+                table_item.setText(str(user_stats[column][row]))
+                self.ui.stat_table.setItem(row, column, table_item)
+
 
         self.ui.training_window.hide()
         self.ui.info_frame.hide()
@@ -168,7 +175,19 @@ class keyboard_trainer(QMainWindow):
 
     def get_user_stats(self):
         # TODO: Вытягивание с БД
-        user_stats = [4.65, 4.21, 3.56, 2.69]
+        if self.connect_cursor is None:
+            connection = psycopg2.connect(
+                database="kp0092_27",
+                user="st0092",
+                password="qwerty92",
+                host="172.20.8.18",
+                port="5432"
+            )
+            self.connect_cursor = connection.cursor()
+        mac_address = str(get_mac_address())
+        query = 'SELECT'
+
+        user_stats = [[str(i) for i in range(0, 6)], [str(i) for i in range(6, 12)], [str(i) for i in range(12, 18)]]
         return user_stats
 
     def generate_words(self):
@@ -229,5 +248,6 @@ window.show()
 # window.ui.info_frame.hide()
 # window.ui.stat_frame.hide()
 # window.ui.training_window.show()
-
+if window.connect_cursor is not None:
+    window.connect_cursor.close()
 sys.exit(app.exec())
