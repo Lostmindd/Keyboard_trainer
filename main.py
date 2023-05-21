@@ -8,6 +8,7 @@ import sys
 from PySide6.QtWidgets import QApplication, QMainWindow
 from PySide6.QtGui import QFontDatabase
 
+import words_generator
 from Ui_MainWindow import Ui_MainWindow
 
 
@@ -17,13 +18,14 @@ class keyboard_trainer(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.current_page = ''
-        self.current_difficulty = 'низкая'
+        self.current_difficulty = 1
         self.current_language = 'ru'
         self.last_pressed_key = ''
         self.remaining_text = ''
         self.print_line = ''
         self.input_text = ''
-        self.words = {}
+        self.current_generated_words = []
+        self.words_generators = {}
         self.current_input_key_index = 0
         self.start_time = 0
         self.current_input_key_index = 0
@@ -42,15 +44,26 @@ class keyboard_trainer(QMainWindow):
         self.ui.en_button.clicked.connect(lambda x: self.change_language('en'))
 
     def show_training_page(self):
+        if self.ui.start_button.text() == 'Стоп':
+            self.show_result_page()
         if self.current_page == 'training_page':
             return
         self.current_page = 'training_page'
-        self.ui.start_button.setText('Пауза')
+        generator_name = self.current_language + str(self.current_difficulty)
+        if generator_name not in self.words_generators:
+            new_generator = words_generator.WordsGenerator()
+            new_generator.read_words_from_file('dictionaries\\'+generator_name+'.txt')
+            new_generator.create_markov_chain()
+            self.words_generators[generator_name] = new_generator
+        self.current_generated_words = self.words_generators[generator_name].generate_words(1)
+        if self.ui.start_button.text() == 'Старт':
+            self.ui.start_button.setText('Стоп')
+        else:
+            self.ui.start_button.setText('Старт')
         self.ui.info_frame.hide()
         self.ui.stat_frame.hide()
         self.ui.result_frame.hide()
         self.ui.training_window.show()
-        self.words['rus1'] = self.get_words_from_db()
         self.start_time = time.perf_counter()
         self.current_error_num = 0
         self.current_printed_word_num = 0
@@ -63,6 +76,7 @@ class keyboard_trainer(QMainWindow):
     def show_information_page(self):
         if self.current_page == 'information_page':
             return
+        self.ui.start_button.setText('Старт')
         self.current_page = 'information_page'
         self.ui.training_window.hide()
         self.ui.stat_frame.hide()
@@ -72,6 +86,7 @@ class keyboard_trainer(QMainWindow):
     def show_statistics_page(self):
         if self.current_page == 'statistics_page':
             return
+        self.ui.start_button.setText('Старт')
         self.current_page = 'statistics_page'
         user_stats = self.get_user_stats()
         self.ui.stat_tab_day_1.setText('за 1 день: ' + str(user_stats[0]))
@@ -88,8 +103,11 @@ class keyboard_trainer(QMainWindow):
         if self.current_page == 'result_page':
             return
         training_time = round(time.perf_counter() - self.start_time, 2)
-        char_input_speed = round(self.current_printed_char_num - self.start_time, 2)
-        accuracy = round(1 - self.current_error_num/self.current_printed_char_num, 2)
+        char_input_speed = round(self.current_printed_char_num / training_time, 2)
+        if self.current_printed_char_num == 0:
+            accuracy = 0
+        else:
+            accuracy = round(1 - self.current_error_num/self.current_printed_char_num, 2)
         self.ui.result_stat_tab_day_1.setText('Время (секунд): ' + str(training_time))
         self.ui.result_stat_tab_day_3.setText('Напечатано слов: ' + str(self.current_printed_word_num))
         self.ui.result_stat_tab_day_10.setText('Напечатано символов: ' + str(self.current_printed_char_num))
@@ -105,15 +123,16 @@ class keyboard_trainer(QMainWindow):
 
     def save_result(self):
         pass
+
     def change_difficulty(self):
         if self.current_page == 'training_page':
             return
-        difficulty = ['низкая', 'средняя', 'высокая']
-        difficulty_colors = {'низкая': [[121, 216, 88], [101, 196, 68], [71, 166, 38]],
-                             'средняя': [[255, 222, 104], [235, 202, 84], [205, 172, 54]],
-                             'высокая': [[255, 125, 141], [235, 105, 121], [205, 75, 91]]}
-        new_difficulty_index = ((difficulty.index(self.current_difficulty) + 1) % 3)
-        self.current_difficulty = difficulty[new_difficulty_index]
+        difficulty = [3, 1, 2]
+        difficulty_colors = {1: [[121, 216, 88], [101, 196, 68], [71, 166, 38]],
+                             2: [[255, 222, 104], [235, 202, 84], [205, 172, 54]],
+                             3: [[255, 125, 141], [235, 105, 121], [205, 75, 91]]}
+        current_difficulty_index = ((self.current_difficulty + 1) % 3)
+        self.current_difficulty = difficulty[current_difficulty_index]
         button_stylesheet_part_1 = u"\nQPushButton { \n"
 
         background_color_1 = "background-color:rgb(" + str(difficulty_colors[self.current_difficulty][0][0]) + \
@@ -156,13 +175,13 @@ class keyboard_trainer(QMainWindow):
         max_print_line_size = 30
         print_line = ''
         self.current_input_key_index = 0
-        words = self.words['rus1']
+        words = self.current_generated_words
         if len(words) == 0:
             self.show_statistics_page()
             print(time.perf_counter() - self.start_time)
             self.show_result_page()
         while len(words) > 0 and max_print_line_size > len(words[0] + ' '):
-            self.current_printed_word_num += len(words[0])
+            self.current_printed_word_num += 1
             max_print_line_size -= len(words[0])
             print_line += words.pop(0) + ' '
         remaining_text = ' '.join(words)
@@ -181,7 +200,7 @@ class keyboard_trainer(QMainWindow):
             self.ui.text_for_input_printed.setText(self.input_text)
             self.current_input_key_index += 1
             self.current_printed_char_num += 1
-        else:
+        elif key != '':
             self.current_error_num += 1
         if self.current_input_key_index == len(self.print_line):
             self.generate_words()
@@ -190,7 +209,7 @@ class keyboard_trainer(QMainWindow):
         if self.current_page != 'training_page':
             return
         key = event.text()
-        print(key)
+        # print(key)
         self.check_key(key)
 
     def get_words_from_db(self):
