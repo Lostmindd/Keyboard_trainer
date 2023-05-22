@@ -2,7 +2,6 @@ import random
 
 
 class WordsGenerator:
-
     def __init__(self):
         self.words = []
         self.markov_chain = {}
@@ -19,7 +18,7 @@ class WordsGenerator:
                 else:
                     self.words.append(word)
                 word = ''
-            elif char == '.':
+            elif char in ['.', '!', '?']:
                 self.words.append(word)
                 self.words.append('END')
                 word = ''
@@ -53,7 +52,7 @@ class WordsGenerator:
                     break
             if current_word == 'END':
                 current_word = 'START'
-                generated_words.append('.')
+                generated_words[-1] += '.'
                 continue
             generated_words.append(current_word)
             generated_words_num += 1
