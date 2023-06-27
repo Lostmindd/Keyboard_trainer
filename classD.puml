@@ -1,0 +1,54 @@
+@startuml
+
+
+keyboard_trainer --|> Ui_MainWindow
+keyboard_trainer -> words_generator
+
+
+
+class keyboard_trainer {
+ui
+current_page
+current_difficulty
+current_language
+last_pressed_key
+remaining_text
+print_line
+input_text
+current_generated_words
+words_generators
+current_input_key_index
+current_error_num
+current_printed_word_num
+current_printed_char_num
+current_error_num
+delete_records_from_db(btn)
+delete_records()
+show_training_page()
+show_information_page()
+show_statistics_page(refresh)
+show_result_page()
+save_result(training_time, char_input_speed, accuracy)
+create_connection()
+execute_query(quary, is_insert)
+change_difficulty()
+change_language(language)
+get_user_stats()
+words_output()
+check_key(key)
+keyPressEvent(event)
+}
+
+class words_generator{
+words
+markov_chain
+read_words_from_file(file_path)
+create_markov_chain()
+generate_words(words_count)
+}
+
+class Ui_MainWindow{
+
+}
+
+@enduml
